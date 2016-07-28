@@ -1,0 +1,245 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
+html {
+	direction: $dir;
+}
+
+body {
+	background-color: $light;
+	color: $defaultColor;
+	font-family: $font-primary;
+	font-weight: 400;
+	font-size: $body-font-size;
+	line-height: $body-line-height;
+	margin: 0;
+}
+
+::selection {
+	background: $baseColor;
+	color:$light;
+	text-shadow: none;
+}
+
+::-moz-selection {
+	background: $baseColor; /* Firefox */
+	color: $light;
+	text-shadow: none;
+}
+
+::-webkit-selection {
+	background: $baseColor; /* Safari */
+	color: $light;
+	text-shadow: none;
+}
+
+::-o-selection {
+	background: $baseColor; /* opera */
+	color: $light;
+	text-shadow: none;
+}
+
+
+:active,
+:focus { outline: none !important; }
+.parallax {
+  background-attachment: fixed;
+  background-color: transparent;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+/************************
+	Typography
+********************************/
+
+dl, dt, dd, ol, ul, li {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-size-adjust: 0.5;
+}
+a {
+    color: $linkColor;
+    text-decoration: none;
+}
+a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: lighten($linkColor, 7%);
+}
+
+h1, h2, h3, h4, h5, h6{
+	color:$headignColor;
+	font-family: $heading-font;
+	font-weight: $heading-font-weight;
+}
+mark{
+	background: $baseColor;
+	color: $light;
+	padding: 2px 5px;
+	display: inline-block;
+}
+img{
+	max-width: 100%;
+}
+.fa{
+	margin-right: 5px;
+}
+/*basic CSS*/
+.paddingVertical{
+	padding-left: $vertical +px;
+	padding-right: $vertical +px;
+}
+.paddingHorizontal{
+	padding-top: $horizontal +px;
+	padding-bottom: $horizontal +px;
+}
+
+.paddingHorizontalSm{
+	padding-top: ($horizontal/2) +px;
+	padding-bottom: ($horizontal/2) +px;
+}
+.noPadding{
+	padding: 0px;
+}
+
+.marginVertical{
+	margin-left: $vertical +px;;
+	margin-right: $vertical +px;;
+}
+
+.marginHorizontal{
+	margin-top: $horizontal +px;;
+	margin-bottom: $horizontal +px;;
+}
+.mhSm{
+	margin-top: ($horizontal/2) +px;
+	margin-bottom: ($horizontal/2) +px;
+}
+.marginBottom{
+	margin-bottom: $horizontal +px;;
+}
+.marginBottomSm{
+	margin-bottom: ($horizontal/2) +px;
+}
+
+.marginAll { margin: 50px !important;}
+.marginLeft {margin-left: 50px !important;}
+.marginRight{ margin-right: 50px !important;}
+.marginBottom{ margin-bottom: 50px !important;}
+.marginTop{margin-top: 50px;}
+
+.marginSmAll{margin: 30px !important;}
+.marginSmTop{margin-top: 30px !important;}
+.marginSmLeft{margin-left: 30px !important;}
+.marginSmRight{margin-right: 30px !important;}
+.marginSmBottom{margin-bottom: 30px !important;}
+
+.marginXsAll{margin: 10px !important;}
+.marginXsLeft{margin-left: 10px !important;}
+.marginXsRight{margin-right: 10px !important;}
+.marginXsTop{margin-top: 10px !important;}
+.marginXsBottom{margin-bottom: 10px !important;}
+
+.noMargin{margin: 0 !important;}
+.noMarginLeft{margin-left: 0 !important;}
+.noMarginRingt{margin-right: 0 !important;}
+.noMarginTop{margin-top: 0 !important;}
+.noMarginBottom {margin-bottom: 0 !important;}
+
+.paddingAll{padding: 50px !important;}
+.paddingLeft{padding-left: 50px !important; }
+.paddingRight{padding-right: 50px !important;}
+.paddingTop{padding-top: 50px!important;}
+.paddingBottom{padding-bottom: 50px !important;}
+
+.paddingSmAll{padding: 30px !important;}
+.paddingSmTop{padding-top: 30px !important;}
+.paddingSmLeft{padding-left: 30px !important;}
+.paddingSmRight{padding-right: 30px !important;}
+.paddingSmBottom{padding-bottom: 30px !important;}
+
+.paddingXsAll{padding: 10px !important;}
+.paddingXsLeft{padding-left: 10px !important;}
+.paddingXsRight{padding-right: 10px !important;}
+.paddingXsTop{padding-top: 10px !important;}
+.paddingXsBottom{padding-bottom: 10px !important;}
+
+.noPadding{padding: 0 !important;}
+.noPaddingLeft{padding-left: 0 !important;}
+.noPaddingRight{padding-right: 0 !important;}
+.noPaddingTop{padding-top: 0 !important;}
+.noPaddingBottom{padding-bottom: 0 !important;}
+.last {   margin-right: 0 !important;  padding-right: 0 !important; }
+
+.radius{-webkit-border-radius: 5px !important; -moz-border-radius: 5px !important; -ms-border-radius: 5px !important; -o-border-radius: 5px !important; border-radius: 5px !important;}
+.radiusSm{-webkit-border-radius: 10px !important; -moz-border-radius: 10px !important; -ms-border-radius: 10px !important; -o-border-radius: 10px !important; border-radius: 10px !important;}
+.radiusLg{-webkit-border-radius: 20px !important; -moz-border-radius: 20px !important; -ms-border-radius: 20px !important; -o-border-radius: 20px !important; border-radius: 20px !important;}
+.radiusRound{-webkit-border-radius: 50% !important; -moz-border-radius: 50% !important; -ms-border-radius: 50% !important; -o-border-radius: 50% !important; border-radius: 50% !important;}
+.noRadius { -webkit-border-radius: 0 !important; -moz-border-radius: 0 !important; -ms-border-radius: 0 !important; -o-border-radius: 0 !important; border-radius: 0 !important; }
+
+
+.divCenter {
+	position: relative !important;
+	float: none !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.bgColor{
+	background-color:$baseColor !important;
+	background-image: none !important;
+	color:$light;
+	p, a, small, strong{
+		color:$light;
+	}
+}
+.ngbgColor{background-color:  transparent !important;}
+
+.color,
+.color p,
+.color a{ color: $baseColor !important;}
+.no-animated{opacity: 0;}
+
+.no-radius{
+	@include border-radius(0);
+}
+/*wrapper*/
+.wrapper{
+	@include transition(all 0.4s ease-in-out);
+	width: 100%;
+	margin: 0;
+}
+
+.dark{
+	background-color: $dark;
+}
+
+/*page loding animation*/
+.mainLodingBar {
+  background: #fff none repeat scroll 0 0;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 11111;
+}
+.mainLogindContainer {
+  left: 47%;
+  position: absolute;
+  top: 46%;
+}
+.mainLodingBar.ng-hide{
+	display: none;
+}
+/* Responsive */
+@media (max-width: 479px) {
+
+	body {
+		font-size: 13px;
+	}
+
+}

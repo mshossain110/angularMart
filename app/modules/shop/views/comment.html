@@ -1,0 +1,80 @@
+<section class="comment clearfix" >
+  <div class="comments">
+
+    <ul ng-if="comments.length">
+    <li ng-repeat="comment in comments">
+      <header>
+
+        <a href="">{{ comment.author.name }}</a>
+        <div class="pull-right text-right">
+          <button  class="love">
+            <i class="fa fa-heart-o"></i>
+          </button>
+          <button class="reply">
+            <i class="fa fa-reply"></i>
+          </button>
+          <div class="rating">
+
+            <star-rating ng-model="tr" read-only="true" ></star-rating>
+          </div>
+        </div>
+
+
+        <img ng-src="images/gravator/{{comment.id}}.png"/>
+      </header>
+      <article ng-bind-html="parseContent(comment.content)"></article>
+    </li>
+  </ul>
+
+
+    <ul class="list-unstyled">
+      <li>
+        <div class="col-sm-2 avatar">
+          <img src="" alt="" />
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="comment-form">
+    <h3>Leave a review <small></small></h3>
+    <form class="form-horizontal" action="" method="post">
+
+      <div class="form-group ">
+        <div class="col-sm-4 pull-right text-right">
+          <div class="rating">
+            <small>Good quality</small>
+            <star-rating ng-model="ql"  ></star-rating>
+          </div>
+          <div class="rating">
+            <small>Good value</small>
+            <star-rating ng-model="vl"  ></star-rating>
+          </div>
+          <div class="rating">
+            <small>Delevery</small>
+            <star-rating ng-model="dl"  ></star-rating>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group half">
+        <div class="col-sm-12 ">
+          <input type="text" class="form-control  input-lg" id="state" placeholder="Name">
+          <input type="text" class="form-control input-lg" id="zip" placeholder="Email">
+        </div>
+      </div>
+
+        <div class="form-group ">
+          <div class="col-sm-12 ">
+              <textarea name="name" class="form-control  input-lg" rows="8" cols="40"></textarea>
+          </div>
+        </div>
+
+      <div class="form-group">
+        <div class="col-sm-12 ">
+            <button type="button" class="btn btn-lg btn-5" name="button">Leave a Review</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</section>

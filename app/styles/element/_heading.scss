@@ -1,0 +1,95 @@
+h1  mark:not(.nocolor),
+h2  mark:not(.nocolor),
+h3  mark:not(.nocolor),
+h4  mark:not(.nocolor),
+h5  mark:not(.nocolor),
+h6  mark:not(.nocolor) {
+  background: transparent;
+  color: $baseColor;
+ }
+
+.amtitle {
+  margin-bottom: 30px;
+  position: relative;
+  display: block;
+  clear: both;
+}
+.amtitle span, .amtitle i{
+  display: block;
+  color:$baseColor;
+}
+
+.amtitle small {
+  display: block;
+  font-size: 17px;
+}
+.amtitle h1,
+.amtitle h2,
+.amtitle h3,
+.amtitle h4,
+.amtitle h5,
+.amtitle h6 {
+  background-color: #fff;
+  color:$headignColor;
+  font-family: $heading-font;
+  font-weight: $heading-font-weight;
+  line-height: 50px;
+  display: inline-block;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  padding-#{$right}: 15px;
+  position: relative;
+  z-index: 1;
+  text-align: $left;
+  text-transform: uppercase;
+}
+.amtitle h4, .amtitle h5, .amtitle h6 {
+  padding-#{$right}: 10px;
+}
+.amtitle.title-double-border::before,
+.amtitle.title-double-border::after
+{
+  border-top: 3px solid $baseColor;
+  content: "";
+  height: 0;
+  #{$left}: auto;
+  position: absolute;
+  #{$right}: 0;
+  top: 60%;
+  width: 100%;
+}
+.amtitle.title-double-border::after,
+.amtitle.title-border-color::after {
+  border-top: 1px solid $baseColor;
+  top: 57%;
+}
+.amtitle.title-bottom-border h1, .amtitle.title-bottom-border h2, .amtitle.title-bottom-border h3, .amtitle.title-bottom-border h4, .amtitle.title-bottom-border h5, .amtitle.title-bottom-border h6 {
+  background: transparent none repeat scroll 0 0;
+  border-bottom: 2px solid $baseColor;
+  padding: 0 0 10px;
+}
+.title-center {
+  text-align: center;
+}
+.title-center h1, .title-center h2, .title-center h3 {
+  padding: 0 15px;
+}
+
+.title-center h4, .title-center h5, .title-center h6 {
+  padding: 0 10px;
+}
+.amtitle.title-right {
+    text-align: right;
+}
+.amtitle.title-left {
+    text-align: left;
+}
+.amtitle.title-right h1,
+.amtitle.title-right h2,
+.amtitle.title-right h3,
+.amtitle.title-right h4,
+.amtitle.title-right h5,
+.amtitle.title-right h6 {
+    padding-right: 0;
+    padding-left: 15px;
+}

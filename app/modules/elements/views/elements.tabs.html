@@ -1,0 +1,183 @@
+<am-page-title displayname-property="data.title"></am-page-title>
+<div class="container-fluid paddingHorizontal">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-xs-12">
+        <div class="amtitle title-double-border shape-sd">
+            <h2>Tabs  <span>Default</span></h2>
+        </div>
+
+        <div class="tabs-container" ng-init="demoTab1=1">
+        <!-- Nav tabs -->
+        <div class="tabs-title">
+            <span ng-click="demoTab1=1"  ng-class="{active: demoTab1=='1'}">easy Tabs</span>
+            <span ng-click="demoTab1=2"  ng-class="{active: demoTab1=='2'}">Responsive</span>
+            <span ng-click="demoTab1=3"  ng-class="{active: demoTab1=='3'}">Touch Friendly</span>
+        </div>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div  class="tab-pane " ng-show="demoTab1=='1'" ng-class="{active: demoTab1=='1'}" >
+            <h3>easy Tabs</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          <div  class="tab-pane" ng-show="demoTab1=='2'" ng-class="{active: demoTab1=='2'}">
+             <h3>Responsive</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          <div  class="tab-pane" ng-show="demoTab1=='3'" ng-class="{active: demoTab1=='3'}">
+              <h3>Touch Friendly</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        </div>
+      </div>
+      </div>
+
+
+      <div class="col-sm-6 col-xs-12">
+        <div class="amtitle title-double-border shape-sd">
+            <h2>Tabs  <span>justified</span></h2>
+        </div>
+
+        <div class="tabs-container justified" ng-init="demoTab2=1">
+        <!-- Nav tabs -->
+        <div class="tabs-title">
+            <span ng-click="demoTab2=1"  ng-class="{active: demoTab2=='1'}">easy Tabs</span>
+            <span ng-click="demoTab2=2"  ng-class="{active: demoTab2=='2'}">Responsive</span>
+            <span ng-click="demoTab2=3"  ng-class="{active: demoTab2=='3'}">Touch Friendly</span>
+        </div>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div  class="tab-pane " ng-show="demoTab2=='1'" ng-class="{active: demoTab2=='1'}" >
+            <h3>easy Tabs</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          <div  class="tab-pane" ng-show="demoTab2=='2'" ng-class="{active: demoTab2=='2'}">
+             <h3>Responsive</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          <div  class="tab-pane" ng-show="demoTab2=='3'" ng-class="{active: demoTab2=='3'}">
+              <h3>Touch Friendly</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 col-xs-12">
+        <div class="amtitle title-double-border shape-sd">
+            <h2>Tabs  <span>Color</span></h2>
+        </div>
+
+        <div class="tabs-container tabcolor" ng-init="demoTab3=1">
+        <!-- Nav tabs -->
+        <div class="tabs-title">
+            <span ng-click="demoTab3=1"  ng-class="{active: demoTab3=='1'}">easy Tabs</span>
+            <span ng-click="demoTab3=2"  ng-class="{active: demoTab3=='2'}">Responsive</span>
+            <span ng-click="demoTab3=3"  ng-class="{active: demoTab3=='3'}">Touch Friendly</span>
+        </div>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div  class="tab-pane " ng-show="demoTab3=='1'" ng-class="{active: demoTab3=='1'}" >
+            <h3>easy Tabs</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          <div  class="tab-pane" ng-show="demoTab3=='2'" ng-class="{active: demoTab3=='2'}">
+             <h3>Responsive</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          <div  class="tab-pane" ng-show="demoTab3=='3'" ng-class="{active: demoTab3=='3'}">
+              <h3>Touch Friendly</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        </div>
+      </div>
+      </div>
+
+
+      <div class="col-sm-6 col-xs-12">
+        <div class="amtitle title-double-border shape-sd">
+            <h2>Tabs  <span>Icon</span></h2>
+        </div>
+
+        <div class="tabs-container justified" ng-init="demoTab4=1">
+        <!-- Nav tabs -->
+        <div class="tabs-title">
+            <span ng-click="demoTab4=1"  ng-class="{active: demoTab4=='1'}"><i class="fa fa-share"></i> easy Tabs</span>
+            <span ng-click="demoTab4=2"  ng-class="{active: demoTab4=='2'}"><i class="fa fa-mobile"></i>Responsive</span>
+            <span ng-click="demoTab4=3"  ng-class="{active: demoTab4=='3'}"><i class="fa fa-gear"></i>Touch Friendly</span>
+        </div>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div  class="tab-pane " ng-show="demoTab4=='1'" ng-class="{active: demoTab4=='1'}" >
+            <h3>easy Tabs</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          <div  class="tab-pane" ng-show="demoTab4=='2'" ng-class="{active: demoTab4=='2'}">
+             <h3>Responsive</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          <div  class="tab-pane" ng-show="demoTab4=='3'" ng-class="{active: demoTab4=='3'}">
+              <h3>Touch Friendly</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-xs-12">
+        <div class="amtitle title-double-border shape-sd">
+            <h2>Tabs  <span>vertical</span></h2>
+        </div>
+
+        <div class="tabs-container vertical" ng-init="demoTab5=1">
+        <!-- Nav tabs -->
+        <div class="tabs-title">
+            <span ng-click="demoTab5=1"  ng-class="{active: demoTab5=='1'}">easy Tabs</span>
+            <span ng-click="demoTab5=2"  ng-class="{active: demoTab5=='2'}">Responsive</span>
+            <span ng-click="demoTab5=3"  ng-class="{active: demoTab5=='3'}">Touch Friendly</span>
+        </div>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div  class="tab-pane " ng-show="demoTab5=='1'" ng-class="{active: demoTab5=='1'}" >
+            <h3>easy Tabs</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          <div  class="tab-pane" ng-show="demoTab5=='2'" ng-class="{active: demoTab5=='2'}">
+             <h3>Responsive</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          <div  class="tab-pane" ng-show="demoTab5=='3'" ng-class="{active: demoTab5=='3'}">
+              <h3>Touch Friendly</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        </div>
+      </div>
+      </div>
+
+
+      <div class="col-sm-12 col-xs-12">
+        <div class="amtitle title-double-border shape-sd">
+            <h2>Tabs vertical <span>Icon</span></h2>
+        </div>
+
+        <div class="tabs-container vertical" ng-init="demoTab6=1">
+        <!-- Nav tabs -->
+        <div class="tabs-title">
+            <span ng-click="demoTab6=1"  ng-class="{active: demoTab6=='1'}"><i class="fa fa-share"></i> easy Tabs</span>
+            <span ng-click="demoTab6=2"  ng-class="{active: demoTab6=='2'}"><i class="fa fa-mobile"></i>Responsive</span>
+            <span ng-click="demoTab6=3"  ng-class="{active: demoTab6=='3'}"><i class="fa fa-gear"></i>Touch Friendly</span>
+        </div>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div  class="tab-pane " ng-show="demoTab6=='1'" ng-class="{active: demoTab6=='1'}" >
+            <h3>easy Tabs</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          <div  class="tab-pane" ng-show="demoTab6=='2'" ng-class="{active: demoTab6=='2'}">
+             <h3>Responsive</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          <div  class="tab-pane" ng-show="demoTab6=='3'" ng-class="{active: demoTab6=='3'}">
+              <h3>Touch Friendly</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,187 @@
+/*content box style*/
+.content-box {
+  display: table;
+  overflow: hidden;
+  position: relative;
+  color: $defaultColor;
+
+  .content-box-outer {
+    margin: 5px;
+  }
+
+  .content-box-inner {
+    position: relative;
+    overflow: hidden;
+    clear: both;
+  }
+
+    .content-box-content{
+      padding-left: 15px;
+      padding-right: 15px;
+      overflow: hidden;
+      display: inline-block;
+
+        h1 a, h2 a, h3 a, h4 a{
+          color: $defaultColor;
+        }
+        h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover{
+          color: $baseColor;
+        }
+
+        p{
+            color: $defaultColor;
+        }
+
+      }
+
+      h1 small,  h2 small, .content-box h3 small, .content-box h4 small{
+        display: block;
+      }
+
+
+      .content-box-image {
+          width: 100%;
+          overflow: hidden;
+          display: block;
+
+           img,
+          iframe {
+            @include scale(1);
+            @include transition(all 0.4s);
+            opacity: 1;
+              width: 100%;
+              height: auto;
+          }
+      }
+
+      &:hover .content-box-image img {
+          @include scale(1.1);
+          @include transition(all 0.4s);
+          opacity: 0.9;
+      }
+
+      .content-box-button {
+        margin:10px 0px;
+        padding-left: 10px;
+      }
+
+      &.cb-border{
+        border: 1px solid #e7e7e7;
+      }
+      &.cb-border-right {
+        border-right: 1px solid #e7e7e7;
+      }
+      &.no-border{
+        border: medium none;
+      }
+
+
+
+      &.cb-image-left .content-box-image {
+        width: 40%;
+        min-width: 150px;
+        display: table;
+        float: left;
+      }
+
+      &.cb-image-left .content-box-content{
+        width: 60%;
+        min-width: 150px;
+        float: left;
+
+      }
+
+      &.cb-image-right .content-box-image{
+        width: 40%;
+        min-width: 150px;
+        display: table;
+        float: right;
+      }
+      &.cb-image-right .content-box-content{
+        width: 60%;
+        min-width: 150px;
+        float: left;
+      }
+
+      .content-box-tag {
+        display: block;
+        margin-top: 10px;
+        overflow: hidden;
+
+        a {
+          border: 1px solid #ddd;
+          color: $baseColor;
+          display: inline-block;
+          padding: 5px;
+          font-size: 10px;
+          &:hover {
+            background: $baseColor none repeat scroll 0 0;
+            color: $light;
+            opacity: 1;
+          }
+        }
+
+
+      }
+
+      //icon box right
+
+      &.cb-icon-right{
+        .content-box-inner {
+          overflow: hidden;
+          padding-right: 120px;
+          position: relative;
+        }
+
+        .content-box-icon{
+          border: 1px solid #ddd;
+          border-radius: 100%;
+          right: 0;
+          padding: 30px;
+          position: absolute;
+          top: 20px;
+        }
+
+        .content-box-content{
+          padding-top: 0;
+          text-align: left;
+        }
+      }
+
+      //icon box left
+      &.cb-icon-left{
+        .content-box-inner {
+          overflow: hidden;
+          padding-left: 120px;
+          position: relative;
+        }
+
+        .content-box-icon{
+          border: 1px solid #ddd;
+          border-radius: 100%;
+          left: 0;
+          padding: 30px;
+          position: absolute;
+          top: 20px;
+        }
+
+        .content-box-content {
+          padding-top: 0;
+          text-align: left;
+        }
+      }
+
+      //border bottom
+      &.cb-border-bottom{
+        padding-bottom: 30px;
+        border-bottom: 5px solid $baseColor;
+        @include border-bottom-radius(10px);
+      }
+
+}
+
+.content-box.cb-image-right h1, .content-box.cb-image-right h2, .content-box.cb-image-right h3, .content-box.cb-image-right h4, .content-box.cb-image-right h1 a, .content-box.cb-image-right h2 a, .content-box.cb-image-right h3 a, .content-box.cb-image-right h4 a ,
+.content-box.cb-image-left h1, .content-box.cb-image-left h2, .content-box.cb-image-left h3, .content-box.cb-image-left h4, .content-box.cb-image-left h1 a, .content-box.cb-image-left h2 a, .content-box.cb-image-left h3 a, .content-box.cb-image-left h4 a {
+  margin: 4px 0px;
+
+}

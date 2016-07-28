@@ -1,0 +1,62 @@
+
+
+<div class="plarge-view">
+
+  <div id="slider" class="flexslider">
+    <ul class="slides">
+      <li ng-repeat="product in products">
+
+
+        <div class="product-outer">
+          <div class="product-inner" am-animate="zoomIn">
+            <div class="product">
+              <!-- product feature image  -->
+              <div class="feature-image">
+                <a ng-href="#/shop/{{product.ID}}"><img ng-src="{{product.src[0]}}" class="img-responsive" alt="AdidasHoodie" /></a>
+              </div>
+
+              <div class="product-details">
+                <!-- product title -->
+                <div class="title">
+                  <a  ng-href="#/shop/{{product.ID}}" ng-bind="product.title"></a>
+                </div>
+
+                <!-- price and rating -->
+                <div class="meta clearfix">
+                  <span class="price">{{product.price | currency:"$":2}}</span>
+
+                  <div class="rating">
+                    <star-rating ng-model="product.rating" read-only="true" ></star-rating>
+                  </div>
+                </div>
+
+                <am-timer date="January 1, 2017 12:00:00"></am-timer>
+
+                <!-- add to wish list. add to cart, compare buttons -->
+                <div class="addtoCart">
+
+                  <button class="btn btn-lg btn-5" ng-click="amCart.addItem(product.ID, product.title, product.src, product.price, 1)" title="Add to Cart"  href="#"><i class="fa fa-shopping-cart"></i>  Add to cart</button>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </li>
+
+      <!-- items mirrored twice, total of 12 -->
+    </ul>
+  </div>
+  <div id="carousel" class="flexslider">
+    <ul class="slides">
+      <li ng-repeat="product in products">
+        <img ng-src="{{product.src[0]}}" alt="" style="width:120px;"/>
+      </li>
+
+      <!-- items mirrored twice, total of 12 -->
+    </ul>
+  </div>
+
+</div>

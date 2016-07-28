@@ -1,0 +1,18 @@
+@import "config/import";
+
+@import "themes/base";
+@import "themes/theme";
+
+@import "themes/slider";
+@import "themes/pageTitle";
+@import "themes/comment";
+@import "../modules/home/scss/home";
+@import "themes/banner";
+@import "../modules/core/scss/header";
+@import "../modules/core/scss/footer";
+@import "../modules/account/scss/account";
+// shop
+@import "../modules/shop/scss/shopExport";
+
+//blogs
+@import "../modules/blogs/scss/blogs";

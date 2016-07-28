@@ -1,0 +1,307 @@
+<!-- /*
+** controller: ShopSingleCtrl as vm
+ ** @description:
+ ** Shop single page full width
+ **/ -->
+
+
+<!-- Page title directive -->
+<am-page-title displayname-property="data.title"></am-page-title>
+
+<!-- Product single section  -->
+<section class="container-fluid page-shop-single shop-single">
+  <div class="container">
+    <div class="row paddingHorizontal">
+        <div class="col-xs-12">
+
+              <article class="product-outer">
+                <div class="product-inner ">
+                  <div class="product">
+                    <!-- feature image flexslider -->
+                    <div class="feature-image col-sm-4 col-xs-12">
+                      <div class="flexslider">
+                        <ul class="slides">
+                          <li ng-repeat="i in vm.singleProduct.src" data-thumb="{{i}}">
+                            <img ng-src="{{i}}" />
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+
+
+                    <div class="product-details col-sm-8 col-xs-12">
+                      <header class="col-xs-12">
+                        <div class="title">
+                          <h2 ng-bind="vm.singleProduct.title"></h2>
+                        </div>
+
+                        <div class="meta clearfix">
+                          <p><span class="price">{{vm.singleProduct.price | currency:"$":2}}</span></p>
+                          <p><span class="stock">{{vm.singleProduct.stock }} in Stock</span></p>
+                          <div class="rating">
+                            <star-rating ng-model="vm.singleProduct.rating" read-only="true" ></star-rating>
+                            <small>(4 out of 10 reviews)</small>
+                          </div>
+                        </div>
+                      </header>
+
+
+                      <div class="varity col-sm-12 paddingHorizontalSm">
+                        <div class="color-s col-sm-4">
+
+                          <select class="form-control" aria-label="ngSelected" ng-model="data.color">
+                            <option value="" selected="selected">Select Colors</option>
+                            <option ng-repeat="c in vm.singleProduct.colors" value="{{c}}">{{c}}</option>
+                          </select>
+
+
+                        </div>
+
+                        <div class="size-s col-sm-4">
+                          <select class="form-control" aria-label="ngSelected" ng-model="data.size">
+                            <option value="" selected="selected">Select Size</option>
+                            <option ng-repeat="s in vm.singleProduct.sizes" value="{{s}}">{{s}}</option>
+                          </select>
+                        </div>
+
+
+                        <div class="addtoCart col-sm-12">
+                          <div class="qc">
+                            <button type="button" class="btn btn-5" name="button" ng-click="vm.decrease()">-</button>
+                            <input type="text" name="name" class="form-control input-sm" ng-model="vm.qt">
+                            <button type="button" class="btn btn-5" name="button" ng-click="vm.increase()">+</button>
+                          </div>
+
+                          <button class="btn btn-lg btn-5" ng-click="vm.amCart.addItem(vm.singleProduct._id, vm.singleProduct.title, vm.singleProduct.src[0], vm.singleProduct.price, vm.qt)" title="Add to Cart"><i class="fa fa-shopping-cart"></i>  Add to cart</button>
+                        </div>
+
+                      </div>
+
+                      <div class="description" ng-bind-html="vm.parseContent(vm.singleProduct.description)"></div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </article>
+
+
+        </div>
+
+    </div>
+    <!-- Product over view End -->
+
+    <!-- Product description tab  -->
+    <div class="row paddingHorizontalSm">
+      <div class="col-xs-12">
+
+        <div class="tabs-container" ng-init="pd=1">
+        <!-- Nav tabs -->
+        <div class="tabs-title">
+            <span ng-click="pd=1"  ng-class="{active: pd=='1'}">description</span>
+            <span ng-click="pd=2"  ng-class="{active: pd=='2'}">Product Infomation</span>
+            <span ng-click="pd=3"  ng-class="{active: pd=='3'}">user review</span>
+        </div>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <!-- description -->
+          <div  class="tab-pane " ng-show="pd=='1'" ng-class="{active: pd=='1'}" >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+
+          <!-- product information -->
+          <div  class="tab-pane" ng-show="pd=='2'" ng-class="{active: pd=='2'}">
+            <table  class="table table-responsive">
+               <tbody>
+                  <tr>
+                     <td>
+                        <span >Product Type:</span>
+                     </td>
+                     <td >
+                        <div>Shirts</div>
+                     </td>
+                     <td >
+                        <span >Gender:</span>
+                     </td>
+                     <td >
+                        <div >Men</div>
+                     </td>
+                     <td>
+                        <span >Age Group:</span>
+                     </td>
+                     <td >
+                        <div >Adults</div>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <span >Supply Type:</span>
+                     </td>
+                     <td >
+                        <div>In-Stock Items</div>
+                     </td>
+                     <td >
+                        <span >Available Quantity:</span>
+                     </td>
+                     <td >
+                        <div >50</div>
+                     </td>
+                     <td>
+                        <span >Material:</span>
+                     </td>
+                     <td >
+                        <div >100% Cotton</div>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <span >Style:</span>
+                     </td>
+                     <td >
+                        <div>Casual Shirts</div>
+                     </td>
+                     <td >
+                        <span >Sleeve Style:</span>
+                     </td>
+                     <td >
+                        <div >Long Sleeve</div>
+                     </td>
+                     <td>
+                        <span >Pattern:</span>
+                     </td>
+                     <td >
+                        <div>Solid Color</div>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td >
+                        <span>Technics:</span>
+                     </td>
+                     <td>
+                        <div>Printed</div>
+                     </td>
+                     <td >
+                        <span >Feature:</span>
+                     </td>
+                     <td >
+                        <div >Anti-Shrink, Quick Dry</div>
+                     </td>
+                     <td >
+                        <span>Season:</span>
+                     </td>
+                     <td >
+                        <div >Winter</div>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <span>Place of Origin:</span>
+                     </td>
+                     <td >
+                        <div >Pakistan</div>
+                     </td>
+                     <td >
+                        <span >Brand Name:</span>
+                     </td>
+                     <td >
+                        <div> anysh apperal</div>
+                     </td>
+                     <td >
+                        <span >Model Number:</span>
+                     </td>
+                     <td >
+                        <div>5439</div>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td >
+                        <span>anysh:</span>
+                     </td>
+                     <td >
+                        <div>dark blue</div>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+
+          </div>
+
+          <!-- Review and comment -->
+            <div  class="tab-pane" ng-show="pd=='3'" ng-class="{active: pd=='3'}">
+              <div  ng-include="'modules/shop/views/comment.html'"> </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Product description tab End -->
+
+  <!-- Product payment and shipping information  -->
+        <div class="row paddingHorizontalSm">
+          <div class="col-sm-3 col-xs-12">
+            <div class="panel bg-am">
+            <div class="panel-heading">
+              <h3 class="panel-title"><i class="fa fa-legal"></i>100% guarantee</h3>
+            </div>
+            <div class="panel-body">
+              We guarantee you the sale of Original Brands.
+            </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3 col-xs-12">
+            <div class="panel bg-am">
+            <div class="panel-heading">
+              <h3 class="panel-title"><i class="fa fa-money"></i>Avilable Payment</h3>
+            </div>
+            <div class="panel-body">
+              We accept Visa, MasterCard and American Express.
+            </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3 col-xs-12">
+            <div class="panel bg-am">
+            <div class="panel-heading">
+              <h3 class="panel-title"><i class="fa fa-truck"></i>World wide Shipping</h3>
+            </div>
+            <div class="panel-body">
+              Free Delivery to 100+ Locations on orders above $40.
+            </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3 col-xs-12">
+            <div class="panel bg-am">
+            <div class="panel-heading">
+              <h3 class="panel-title"><i class="fa fa-repeat"></i>Damage Returns</h3>
+            </div>
+            <div class="panel-body">
+              Return or exchange items purchased within 30 days.
+            </div>
+            </div>
+          </div>
+        </div>
+
+  </div>
+  <!-- Product payment and shipping information End  -->
+
+ </section>
+
+
+ <!-- Related Product -->
+ <section class="container-fluid" >
+  <div class="container">
+    <div class="row paddingHorizontal">
+      <div class="col-xs-12">
+        <div class="amtitle title-double-border title-center">
+          <h2>Related Product</h2>
+        </div>
+           <am-products product-by-category="{{vm.singleProduct.category}}"></am-products>
+      </div>
+    </div>
+  </div>
+</section>

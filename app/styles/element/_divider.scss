@@ -1,0 +1,22 @@
+.divider {
+  border-top: 1px solid #ddd;
+  clear: both;
+  display: block;
+  margin: 30px 0;
+  min-height: 1px;
+  position: static;
+}
+.divider i {
+  background-color: $light;
+  position: relative;
+  top: -16px;
+  z-index: 5;
+}
+
+.dark .divider{
+  border-color: #969696;
+}
+
+.dark .divider i{
+  background-color: $dark;
+}

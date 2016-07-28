@@ -1,0 +1,53 @@
+<div class="amcarousel" autoplay="5000" slides-per-view="3">
+  <div class="amtitle title-left">
+    <h3>Featured Product</h3>
+    <div class="amCarousel-button-next"><i class="fa fa-chevron-right" ></i></div>
+    <div class="amCarousel-button-prev"><i class="fa fa-chevron-left" ></i></div>
+
+  </div>
+
+
+
+ <div class="swiper-wrapper">
+
+     <article class="swiper-slide product-outer marginSmBottom" ng-repeat="product in products">
+       <div class="product-inner" am-animate="zoomIn">
+         <div class="product">
+           <!-- product feature image  -->
+           <div class="feature-image">
+             <a ng-href="#/shop/{{product.ID}}"><img ng-src="{{product.src[0]}}" class="img-responsive" alt="AdidasHoodie" /></a>
+           </div>
+
+           <div class="product-details">
+             <!-- product title -->
+             <div class="title">
+               <a  ng-href="#/shop/{{product.ID}}" ng-bind="product.title"></a>
+             </div>
+
+             <!-- price and rating -->
+             <div class="meta clearfix">
+               <span class="price">{{product.price | currency:"$":2}}</span>
+
+               <div class="rating">
+                 <star-rating ng-model="product.rating" read-only="true" ></star-rating>
+               </div>
+             </div>
+
+             <!-- product description -->
+             <div ng-hide="!pc.listView" class="description" ng-bind-html="pc.parseContent(product.description)"></div>
+
+             <!-- add to wish list. add to cart, compare buttons -->
+             <div class="addtoCart">
+               <button class="btn btn-light l" title="Add to wishlist" ><i class="fa fa-heart"></i></button>
+               <button class="btn btn-5" ng-click="amCart.addItem(product.ID, product.title, product.src, product.price, 1)" title="Add to Cart"  href="#"><i class="fa fa-shopping-cart"></i>  Add to cart</button>
+               <button class="btn btn-light r" title="Add to compear"><i class="fa fa-exchange"></i></button>
+
+             </div>
+
+           </div>
+
+         </div>
+       </div>
+     </article>
+ </div>
+</div>

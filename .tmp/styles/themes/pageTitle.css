@@ -1,0 +1,12 @@
+/* line 1, ../../../app/styles/themes/pageTitle.scss */
+.pageTitle {
+  background: #eee none repeat scroll 0 0;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+/* line 6, ../../../app/styles/themes/pageTitle.scss */
+.pageTitle .breadcrumb {
+  background: transparent;
+}
+
+/*# sourceMappingURL=pageTitle.css.map */

@@ -1,0 +1,244 @@
+<header class="" id="header">
+
+  <!-- Mobile navigation container  -->
+  <div class="mobileheader clearfix">
+    <div class="container">
+      <div id="navtoggle">
+        <a href=""><span class="animated-arrow"></span></a>
+      </div>
+      <div class="smallogo">
+        <a class="">AngularMart</a>
+      </div>
+
+      <div class="search">
+        <span class="fa fa-search"  aria-hidden="true"></span>
+
+        <form class="">
+            <div class="">
+                <input type="text" class="form-control" id="s" placeholder="Search ....">
+            </div>
+          </form>
+      </div>
+
+
+      <div class="cart" ng-controller="cartCtrl">
+        <span class="fa fa-shopping-cart" aria-hidden="true"><sup>{{ amCart.getAmmountOfItems() }}<sup></span>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- destop navigation -->
+    <div class="container">
+      <div class="row" >
+          <div class="header-wrapper">
+
+            <!-- logo area  -->
+            <div id="logo">
+              <a ui-serf="home"><img src="images/logo.png" alt="" /></a>
+            </div>
+
+            <!-- cart area  -->
+            <div class="cart" ng-controller="cartCtrl">
+              <span class="fa fa-shopping-cart" aria-hidden="true"><sup>{{ amCart.getAmmountOfItems() }}<sup></span>
+
+              <div class="cart-dd" ng-class="amCart.getAmmountOfItems() >0? 'has-item' : 'no-item'">
+
+                  <div class="cart-ddh">
+                    <span><i class="fa fa-shopping-cart" aria-hidden="true"></i> {{ amCart.getAmmountOfItems() }} items</span>
+                    <span>Total {{amCart.getSubTotal()| currency}}</span>
+                  </div>
+
+                  <ul class="list-unstyled">
+                    <li class="item" ng-repeat="item in amCart.getAllItems()">
+                          <img ng-src="{{item.image}}" alt="" />
+                          <div class="itemsde">
+                              <h5 ng-bind="item.name"></h5>
+                              <span class="itemPrice">{{item.price | currency}}</span>
+                              <span class="itemPrice"> X {{item.quantity}}</span>
+                              <span class="subTotal">= {{item.total|currency}} </span>
+                          </div>
+                    </li>
+                  </ul>
+                  <div class="cart-ddf">
+                    <a href="" class="btn btn-block btn-4" >View cart</a>
+                  </div>
+              </div>
+
+            </div>
+
+          <!-- search area  -->
+            <div class="search">
+              <i class="sicon"></i>
+              <form class="search-form">
+                <input type="text" class="form-control" id="s" placeholder="Search ....">
+              </form>
+            </div>
+
+          <!-- main navigation  -->
+        <div class="menu_area">
+          <nav class="amNav clearfix sweepToTop" id="amNav">
+              <ul class="ngmenu-items"  >
+                <li ui-sref-active="active">
+                  <a ui-sref="home"><i  class="fa fa-home"></i> <span class="itext">Home</span></a>
+                </li>
+                <li ui-sref-active="active" >
+                  <a href=""><i  class="fa fa-gift"></i> <span class="itext">Shop</span><span class="arrow"></span></a>
+
+                  <!-- shop mega menu  -->
+                  <div class="megamenu shopmenu clearfix" >
+                    <div class="">
+                      <ul class="col-lg-3 col-md-3 col-xs-12 link-list"  >
+                        <li class="title"><i  class="fa fa-bank"></i>SHOP</li>
+                        <li>
+                          <a  ui-sref="shop.shopLeft"><i  class="fa fa-cube"></i><span class="itext">Shop Left</span></a>
+                        </li>
+                        <li>
+                          <a  ui-sref="shop.shopRight"><i  class="fa fa-cube"></i><span class="itext">Shop Right</span></a>
+                        </li>
+                        <li>
+                          <a  ui-sref="shop.shopTop"><i  class="fa fa-cube"></i><span class="itext">Shop Top</span></a>
+                        </li>
+                        <li class="title"><i  class="fa fa-ticket"></i>SHOP Single</li>
+                        <li>
+                          <a  ui-sref="shop.Single"><i  class="fa fa-server"></i><span class="itext">Full Width</span></a>
+                        </li>
+                        <li>
+                          <a  ui-sref="shop.SingleLeft"><i  class="fa fa-server"></i><span class="itext">Left Sidbar</span></a>
+                        </li>
+                        <li>
+                          <a  ui-sref="shop.SingleRight"><i  class="fa fa-server"></i><span class="itext">Right Sidebar</span></a>
+                        </li>
+
+
+                      </ul>
+                      <ul class="col-lg-3 col-md-3 col-xs-12 link-list"  >
+                        <li class="title"  > <i  class="fa fa-th"></i>SHOP GRID</li>
+                        <li   >
+                          <a  ui-sref="shop.shopLeft"><i  class="fa fa-th-large"></i><span class="itext">Four columns</span></a>
+                        </li>
+
+                        <li   >
+                          <a  ui-sref="shop.shopLeftThree"><i  class="fa fa-th-large"></i><span class="itext">Three columns</span></a>
+                        </li>
+
+                        <li   >
+                          <a  ui-sref="feature.accrodionTwo"><i  class="fa fa-th-large"></i><span class="itext">Two columns</span></a>
+                        </li>
+
+                        <li   >
+                          <a  ui-sref="home"><i  class="fa fa-th-list"></i><span class="itext">List item</span></a>
+                        </li>
+
+                        <li   >
+                          <a  ui-sref="home"><i  class="fa fa-keyboard-o"></i><span class="itext">Large Item</span></a>
+                        </li>
+
+                      </ul>
+                      <ul class="col-lg-3 col-md-3 col-xs-12 link-list"  >
+                        <li class="title"  ><i  class="fa fa-money"></i>Payment</li>
+                        <li>
+                          <a  ui-sref="shop.cart"><i  class="fa fa-shopping-cart"></i><span class="itext">Shop Cart</span></a>
+                        </li>
+
+                        <li>
+                          <a  ui-sref="shop.payment"><i  class="fa fa-credit-card"></i><span class="itext">Payment Process</span></a>
+                        </li>
+
+                        <li>
+                          <a  href=""><i  class="fa fa-paypal"></i><span class="itext">paypal</span></a>
+                        </li>
+                        <li>
+                          <a  href=""><i  class="fa fa-cc-stripe"></i><span class="itext">Striple</span></a>
+                        </li>
+
+                      </ul>
+
+                      <ul class="col-lg-3 col-md-3 col-xs-12 link-list"  >
+                        <li class="title"  ><i  class="fa fa-filter"></i>Filter</li>
+                        <li>
+                          <a  ui-sref="shop.shopLeft"><i  class="fa fa-check-square-o"></i><span class="itext">Category</span></a>
+                        </li>
+
+                        <li>
+                          <a  ui-sref="shop.shopLeft"><i  class="fa fa-check-square-o"></i><span class="itext">Price Range</span></a>
+                        </li>
+
+                        <li>
+                          <a  ui-sref="shop.shopLeft"><i  class="fa fa-check-square-o"></i><span class="itext">Brand</span></a>
+                        </li>
+                        <li>
+                          <a  ui-sref="shop.shopLeft"><i  class="fa fa-check-square-o"></i><span class="itext">size</span></a>
+                        </li>
+                        <li>
+                          <a  ui-sref="shop.shopLeft"><i  class="fa fa-check-square-o"></i><span class="itext">Colors</span></a>
+                        </li>
+
+                      </ul>
+
+                    </div>
+                  </div>
+                </li>
+                <li>
+                    <a href=""><i  class="fa fa-diamond"></i> <span class="itext">Features</span><span  class="arrow"></span></a>
+
+                      <!-- Sub nav  -->
+                      <ul class="submenu level1">
+                        <li>
+                          <a href=" "><i  class="fa fa-list"></i> <span class="itext">Elements</span></a>
+                            <ul class="submenu level2">
+                                <li><a href=" "><i  class="fa fa-list"></i> <span class="itext">Animations</span></a></li>
+                                <li><a  ui-sref="feature.contentbox"><i  class="fa "></i><span class="itext">Content Box</span></a></li>
+                                <li><a  ui-sref="feature.pricingTable"><i  class="fa "></i><span class="itext">Pricing Table</span></a></li>
+                                <li><a  ui-sref="feature.testimonials"><i  class="fa "></i><span class="itext">Testimonials</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href=" "><i  class="fa fa-list"></i> <span class="itext">Angular</span></a>
+                          <ul class="submenu level2">
+                            <li   ><a  ui-sref="feature.carousel"><i  class="fa fa-eye"></i><span class="itext">Carousel</span></a></li>
+                            <li><a  ui-sref="feature.tab"><i  class="fa fa-eye"></i><span class="itext">Tab</span></a></li>
+                          </ul>
+                        </li>
+                        <li><a href=" "><i  class="fa fa-list"></i> <span class="itext">Sliders</span></a></li>
+                        <li><a href=" "><i  class="fa fa-list"></i> <span class="itext">Admin</span></a>
+                          <ul class="submenu level2">
+                            <li   ><a  ui-sref="admin.bootstrap"><span class="itext">Bootstrap Control</span></a></li>
+                            <li><a  ui-sref="admin.am-forms"><span class="itext">AngularMart Forms</span></a></li>
+                            <li><a  ui-sref="admin.advanced"><span class="itext">Advanced Control</span></a></li>
+                            <li><a  ui-sref="admin.frompanel"><span class="itext">From Panel</span></a></li>
+                          </ul>
+                        </li>
+                        <li><a href=" "><i  class="fa fa-list"></i> <span class="itext">Page Title</span></a></li>
+                        <li><a href=" "><i  class="fa fa-list"></i> <span class="itext">Widget</span></a></li>
+                        <li><a href=" "><i  class="fa fa-list"></i> <span class="itext">Sidebars</span></a></li>
+                      </ul>
+
+                      </li>
+                      <li>
+                        <a href=""><i  class="fa fa-comment"></i> <span class="itext">Pages</span></a>
+                          <ul class="submenu level1">
+                            <li><a ui-sref="blog.classic"><i  class="fa fa-user"></i> <span class="itext">Blogs</span></a></li>
+                            <li><a ui-sref="blog.listClassic"><i  class="fa fa-user"></i> <span class="itext">Blogs list</span></a></li>
+                            <li><a ui-sref="blog.single"><i  class="fa fa-user"></i> <span class="itext">Blogs Single</span></a></li>
+                          </ul>
+                      </li>
+                      <li>
+                        <a href=""><i  class="fa fa-users"></i> <span class="itext">Account</span><span  class="arrow"></span></a>
+                          <ul class="submenu level1">
+                            <li><a ui-sref="account.loginregistation"><i  class="fa fa-user"></i> <span class="itext">login/register</span></a></li>
+                            <li><a ui-sref="account.registation"><i  class="fa fa-user"></i> <span class="itext">Registation</span></a></li>
+                            <li><a ui-sref="account.login"><i  class="fa fa-user"></i> <span class="itext">Login</span></a></li>
+                            <li><a href=" "><i  class="fa fa-user"></i> <span class="itext">Reset Password</span></a></li>
+                            <li><a href=" "><i  class="fa fa-user"></i> <span class="itext">User Profile</span></a></li>
+                            <li><a href=" "><i  class="fa fa-user"></i> <span class="itext">Edit Profile</span></a></li>
+                          </ul>
+                      </li>
+
+            </ul>
+          </nav>
+        </div>
+      </div>
+      </div>
+  </div>
+</header>

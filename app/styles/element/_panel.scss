@@ -1,0 +1,196 @@
+.panel {
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid $lightGrey;
+    box-shadow: none;
+}
+.panel-heading {
+    background:transparent;
+    border-bottom: 1px solid $lightGrey;
+    border-radius: 5px 5px 0 0;
+    padding: 18px;
+    position: relative;
+}
+.bg-am.panel{
+  border: 1px solid $baseColor;
+}
+.bg-am.panel .panel-heading {
+  background-color: $baseColor;
+  @include gradient-vertical($baseColor, lighten($baseColor, 10%));
+    border-bottom: 0 none;
+    border-right: 0 none;
+    color: $light;
+}
+.bg-am.panel .panel-actions a, .bg-am.panel .panel-actions .panel-action ,
+.bg-warning.panel .panel-actions a, .bg-warning.panel .panel-actions .panel-action ,
+.bg-danger.panel .panel-actions a, .bg-danger.panel .panel-actions .panel-action ,
+.bg-info.panel .panel-actions a, .bg-info.panel .panel-actions .panel-action ,
+.bg-dark.panel .panel-actions a, .bg-dark.panel .panel-actions .panel-action ,
+.bg-success.panel .panel-actions a, .bg-success.panel .panel-actions .panel-action {
+  border-color: $light;
+  color: $light;
+}
+.bg-success .panel-heading {
+    background: #47a447 none repeat scroll 0 0;
+    border-bottom: 0 none;
+    border-right: 0 none;
+    color: #fff;
+}
+.bg-warning .panel-heading {
+    background: #ed9c28 none repeat scroll 0 0;
+    border-bottom: 0 none;
+    border-right: 0 none;
+    color: #fff;
+}
+.bg-danger .panel-heading{
+    background: #d2322d none repeat scroll 0 0;
+    border-bottom: 0 none;
+    border-right: 0 none;
+    color: #fff;
+}
+.bg-info .panel-heading{
+    background: #5bc0de none repeat scroll 0 0;
+    border-bottom: 0 none;
+    border-right: 0 none;
+    color: #fff;
+}
+.bg-dark .panel-heading {
+    background: #171717 none repeat scroll 0 0;
+    border-bottom: 0 none;
+    border-right: 0 none;
+    color: #fff;
+}
+.bg-white  .panel-heading{
+    background: #fff none repeat scroll 0 0;
+    border-bottom: 0 none;
+    border-right: 0 none;
+}
+.panel .panel-actions {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+.panel .panel-actions a, .panel .panel-actions .panel-action {
+    background-color: transparent;
+    display: inline-block;
+    border-radius: 2px;
+    color: #b4b4b4;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    vertical-align: middle;
+    width: 24px;
+    border: 1px solid $lightGrey;
+}
+.panel .panel-actions a:hover, .panel .panel-actions .panel-action:hover {
+    background-color: $redlight;
+    color:$darkGrey;
+    text-decoration: none;
+}
+.panel-actions a, .panel-actions a:focus, .panel-actions a:hover, .panel-actions a:active, .panel-actions a:visited, .panel-actions .panel-action, .panel-actions .panel-action:focus, .panel-actions .panel-action:hover, .panel-actions .panel-action:active, .panel-actions .panel-action:visited {
+    outline: medium none !important;
+    text-decoration: none !important;
+}
+.panel .panel-action .fa {
+  margin: 0;
+}
+.panel-action-toggle {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-feature-settings: normal;
+    font-kerning: auto;
+    font-language-override: normal;
+    font-size: inherit;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-synthesis: weight style;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-rendering: auto;
+}
+.panel-action-toggle::before {
+    content: "";
+}
+.panel-collapsed .panel-action-toggle::before {
+    content: "";
+}
+@media only screen and (max-width: 767px) {
+.panel .panel-actions {
+    float: none;
+    margin-bottom: 15px;
+    position: static;
+    text-align: right;
+}
+.panel .panel-actions a {
+    vertical-align: top;
+}
+}
+.panel-title {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    padding: 0;
+    text-transform: none;
+}
+.panel-subtitle {
+    font-size: 12px;
+    line-height: 1.2em;
+    margin: 7px 0 0;
+    padding: 0;
+}
+.panel-body {
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.panel-body-nopadding {
+    padding: 0;
+}
+.panel-heading + .panel-body {
+    border-radius: 0 0 5px 5px;
+}
+.panel-footer {
+    border-radius: 0 0 5px 5px;
+    margin-top: -5px;
+}
+.panel-footer-btn-group {
+    display: table;
+    padding: 0;
+    width: 100%;
+}
+.panel-footer-btn-group a {
+    background-color: #f5f5f5;
+    border-left: 1px solid #ddd;
+    display: table-cell;
+    padding: 10px 15px;
+    text-decoration: none;
+    width: 1%;
+}
+.panel-footer-btn-group a:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.1) inset;
+}
+.panel-footer-btn-group a:first-child {
+    border-left: medium none;
+}
+
+.panel-body.bg-success {
+    background: #47a447 none repeat scroll 0 0;
+    color: #fff;
+}
+.panel-body.bg-warning {
+    background: #ed9c28 none repeat scroll 0 0;
+    color: #fff;
+}
+.panel-body.bg-danger {
+    background: #d2322d none repeat scroll 0 0;
+    color: #fff;
+}
+.panel-body.bg-info {
+    background: #5bc0de none repeat scroll 0 0;
+    color: #fff;
+}
+.panel-body.bg-dark {
+    background: $dark none repeat scroll 0 0;
+    color: $light;
+}

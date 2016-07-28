@@ -1,0 +1,64 @@
+<am-page-title displayname-property="data.title"></am-page-title>
+
+<section class="container-fluid paddingHorizontal loginregistation">
+  <div class="container clearfix">
+    <div class="row">
+        <div class="col-md-7 col-sm-12 col-xs-12 divCenter">
+          <div class="panel panel-default">
+              <div style="padding: 40px;" class="panel-body">
+
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                  <div class="login_with">
+                    <div class="inner marginHorizontal">
+                      <div class="social-icons social-icons-colored social-icons-with-text">
+                         <ul>
+                           <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i>Login with Facebook</a></li>
+                           <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i>Login with Twitter</a></li>
+                           <li class="social-google"><a href="#"><i class="fa fa-google-plus"></i>Login with Google</a></li>
+                           <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin"></i>Login with Linkedin</a></li>
+                         </ul>
+                     </div>
+                     <div class="vartical-ro">
+                       <span> or</span>
+                     </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <form class="nobottommargin col-md-7  col-sm-12 col-xs-12" ng-submit="vm.signin(vm.loginForm.$valid)" name="vm.loginForm" id="login-form">
+
+                  <h3>Login to your Account</h3>
+
+                  <div class="form-group">
+    								<label for="register-form-email">Email Address:*</label>
+                    <input type="email" class="form-control" name="userEmail" ng-model="vm.loginuser.email" required />
+                    <div ng-messages="vm.loginForm.userEmail.$error"  ng-show="vm.loginForm.userEmail.$touched">
+                      <p  class="text-danger" ng-message="required">Email address is required</p>
+                      <p class="text-danger"  ng-message="email">Your email address is invalid</p>
+                    </div>
+    							</div>
+
+                  <div class="form-group">
+    								<label for="register-form-password">Password:*</label>
+                    <input type="password"   class="form-control" name="password" ng-model="vm.loginuser.password"  required />
+
+                    <div ng-messages="vm.loginForm.password.$error" ng-show="vm.loginForm.password.$touched">
+                        <p class="text-danger" ng-message="required">Password is required.</p>
+
+                    </div>
+    							</div>
+
+                  <div class="form-group mhSm">
+                    <button  ng-disabled="vm.loginForm.$invalid" id="login-submit" class="btn btn-4">Login</button>
+                    <a class="pull-right" href="#">Forgot Password?</a>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>

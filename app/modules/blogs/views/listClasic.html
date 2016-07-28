@@ -1,0 +1,140 @@
+<am-page-title displayname-property="data.title"></am-page-title>
+
+<section class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-xs-12 blog-area">
+          <article class="post post-12 post-listClasic-style" ng-repeat="blog in vm.Blogs">
+            <div class="post-entry">
+
+
+
+                <div class="feature-image alignLeft">
+                  <img class="post-image img-responsive" alt="" ng-src="{{blog.featureImage}}">
+                  <div class="image-hover">
+                    <i class="fa fa-link"></i>
+                    <i class="fa fa-link"></i>
+
+                  </div>
+                </div>
+
+                <div class="post-date bgColor">
+                    {{blog.lastModified | date : 'MMM dd'}} <span >{{blog.lastModified | date : 'yyyy'}}</span>
+                </div>
+
+                <div class="title">
+                  <a href="#blog/{{blog._id}}"><h3>{{blog.title}}</h3></a>
+                </div>
+
+
+
+                <div class="post-content">
+                    <div class="" ng-bind-html="vm.parseContent(blog.description)">
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="meta">
+                    <div class="author">
+
+                      <a href="" ><i class="fa fa-user"></i> {{blog.author.userName}}</a>
+                    </div>
+                  <div class="category">
+                    <i class="fa fa-tags noMargin color"></i>
+                    <a href="" ng-repeat="cat in blog.categories">{{cat}}</a>
+
+                  </div>
+                  <div class="post-status">
+                      <a href="" ><i class="fa fa-thumbs-o-up"></i>{{blog.like}}</a>
+                      <a href="" ><i class="fa fa-thumbs-o-down"></i>{{blog.dislike}}</a>
+                      <a href="" ><i class="fa fa-comments"></i>{{blog.comments.length}}</a>
+                  </div>
+                </div>
+
+            </div>
+          </article>
+  </div>
+      <div class="col-sm-3 col-xs-12 blog-sidebar">
+          <div class="sidebar-content">
+              <div class="widget widget-category">
+                <h3>Categories</h3>
+                <div class="widget-content">
+                  <ul class="list-group">
+                    <li ><a href=""><span Class="fa fa-angle-double-right" ></span>  Design</a></li>
+                    <li ><a href=""><span Class="fa fa-angle-double-right" ></span>  Angularjs</a></li>
+                    <li ><a href=""><span Class="fa fa-angle-double-right" ></span>  NodeJs</a></li>
+                    <li ><a href=""><span Class="fa fa-angle-double-right" ></span>  REST API</a></li>
+                    <li ><a href=""><span Class="fa fa-angle-double-right" ></span>  Fire base</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="widget widget-recent-post">
+                <h3>Recent Post</h3>
+                <div class="widget-content">
+                  <ul class="list-unstyled">
+                    <li >
+                      <img class="post-image" width="480" height="360" srcset="" alt="" src="http://jellywp.com/theme/nanopress/wp-content/uploads/2016/02/photo-1437915015400-137312b61975-480x360.jpeg">
+                        <h4>It not easy learn to control photo color</h4>
+                        <div class="post-status">
+                            <ul class="list-inline">
+                              <li><span class="fa fa-thumbs-o-up"></span>2555</li>
+                              <li><span class="fa fa-thumbs-o-down"></span>5662</li>
+                              <li><span class="fa fa-comments"></span>10</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li >
+                      <img class="post-image" width="480" height="360" srcset="" alt="" src="http://jellywp.com/theme/nanopress/wp-content/uploads/2016/02/photo-1437915015400-137312b61975-480x360.jpeg">
+                        <h4>It not easy learn to control photo color</h4>
+                        <div class="post-status">
+                            <ul class="list-inline">
+                              <li><span class="fa fa-thumbs-o-up"></span>2555</li>
+                              <li><span class="fa fa-thumbs-o-down"></span>5662</li>
+                              <li><span class="fa fa-comments"></span>10</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li >
+                      <img class="post-image" width="480" height="360" srcset="" alt="" src="http://jellywp.com/theme/nanopress/wp-content/uploads/2016/02/photo-1437915015400-137312b61975-480x360.jpeg">
+                        <h4>It not easy learn to control photo color</h4>
+                        <div class="post-status">
+                            <ul class="list-inline">
+                              <li><span class="fa fa-thumbs-o-up"></span>2555</li>
+                              <li><span class="fa fa-thumbs-o-down"></span>5662</li>
+                              <li><span class="fa fa-comments"></span>10</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+
+              <div class="widget widget-text">
+                <img src="http://jellywp.com/theme/nanopress/wp-content/uploads/2016/02/photo-1437915015400-137312b61975-480x360.jpeg" alt="" />
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+              </div>
+
+              <div class="widget widget-tag">
+                <h3>Tag Cloud</h3>
+                <div class="widget-content">
+                  <a href="">Creative</a>
+                  <a href="">Design</a>
+                  <a href="">Wordpress</a>
+                  <a href="">Laravel</a>
+                  <a href="">Desingo</a>
+                </div>
+              </div>
+
+
+
+          </div>
+      </div>
+
+    </div>
+  </div>
+</section>

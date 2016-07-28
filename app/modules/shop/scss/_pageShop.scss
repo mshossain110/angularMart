@@ -1,0 +1,135 @@
+/*shop page */
+
+.shop-page .products-container{
+  width: 100%;
+   float: left;
+  position: relative;
+  @include transition(all 0.6s linear);
+}
+.page-leftSidebar.shop-page.openfilterbar .products-container ,
+.page-rightSidebar.shop-page.openfilterbar .products-container {
+  width: 80%;
+}
+
+.products-entry {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+/*left sidebar*/
+.page-leftSidebar .filter-sidebar {
+  margin-right: 0%;
+  float: left;
+  width: 0;
+  margin-top: 30px;
+  opacity: 0;
+  visibility: hidden;
+  @include translateX(-600px);
+}
+.page-leftSidebar.openfilterbar .filter-sidebar {
+  width: 18%;
+  margin-right: 2%;
+  opacity: 1;
+  visibility: visible;
+  @include translateX(0px);
+}
+
+
+
+/*right sidebar*/
+.page-rightSidebar .filter-sidebar {
+  margin-left: 0%;
+  margin-top: 30px;
+  float: right;
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  @include translateX(600px);
+}
+.page-rightSidebar.openfilterbar .filter-sidebar {
+  margin-left: 2%;
+  width: 18%;
+  opacity: 1;
+  visibility: visible;
+  @include translateX(0px);
+}
+/*top sidebar*/
+.page-topSidebar .filter-sidebar{
+  -webkit-transform: translateY(-600px);
+     -moz-transform: translateY(-600px);
+      -ms-transform: translateY(-600px);
+       -o-transform: translateY(-600px);
+          transform: translateY(-600px);
+    opacity: 0;
+    top:-600px;
+}
+.page-topSidebar.openfilterbar .filter-sidebar{
+  -webkit-transform: translateY(0px);
+     -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+       -o-transform: translateY(0px);
+          transform: translateY(0px);
+    opacity: 1;
+    top:0px;
+}
+.page-topSidebar .products-container{
+  top:-380px;
+}
+.page-topSidebar.openfilterbar .products-container{
+  top:0px;
+}
+.page-topSidebar .filter-area {
+  width: 22%;
+  float: left;
+  margin-right: 3%;
+
+}
+
+.page-topSidebar .filter-area .fpr{
+  clear: both;
+}
+
+
+
+.vmontrol-box {
+  border-bottom: 1px solid $lightGrey;
+  border-top: 1px solid $lightGrey;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  padding: 10px;
+
+  select{
+    font-size: 12px;
+  }
+
+  select option{
+    padding: 1px 0px;
+  }
+
+  .ipp input {
+    display: inline-block;
+    width: 80px;
+  }
+}
+.am-pagination{
+
+  .pagination > li > a,
+   .pagination > li > span {
+    background-color:$light;
+    border: 1px solid $baseColor;
+    color: $baseColor;
+    cursor: pointer;
+  }
+
+  .pagination > .active > a,
+   .pagination > .active > span,
+   .pagination > .active > a:hover,
+    .pagination > .active > span:hover,
+    .pagination > .active > a:focus,
+     .pagination > .active > span:focus{
+        background-color: $baseColor;
+        border-color:$baseColor;
+        color: $light;
+     }
+}

@@ -1,0 +1,180 @@
+//	*Slider basic
+.swiper-container {
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	-ms-backface-visibility:hidden;
+	-o-backface-visibility:hidden;
+	backface-visibility:hidden;
+	/* Fix of Webkit flickering */
+	z-index:1;
+}
+
+.swiper-wrapper {
+	position:relative;
+	width:100%;
+	-webkit-transition-property:-webkit-transform, left, top;
+	-webkit-transition-duration:0s;
+	-webkit-transform:translate3d(0px,0,0);
+	-webkit-transition-timing-function:ease;
+
+	-o-transition-property:-o-transform, left, top;
+	-o-transition-duration:0s;
+	-o-transform:translate3d(0px,0,0);
+	-o-transition-timing-function:ease;
+	-o-transform:translate(0px,0px);
+
+	transition-property:transform, left, top;
+	transition-duration:0s;
+	transform:translate3d(0px,0,0);
+	transition-timing-function:ease;
+
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+.swiper-slide { float: left; }
+#slider {
+	position: relative;
+	overflow: hidden;
+
+}
+
+// slider 1, home 1 slider
+
+#slider.slider-style-1 {
+	width: 100%;
+	height: 600px;
+	.swiper-container {
+		position: relative;
+		width:100%;
+		height:100%;
+		margin: 0;
+	}
+
+	.swiper-slide {
+		background-color: $redlight;
+		position: relative;
+		margin: 0;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		overflow: hidden;
+		color: #524f4f;
+
+		[data-caption-animate] {
+			-webkit-backface-visibility: hidden;
+		}
+
+		.not-animated{
+			opacity: 0;
+		}
+
+		.slider-caption {
+		  position: relative;
+		  top: 100px;
+			font-family: 'Josefin Slab', sans-serif;
+		}
+
+		.slider-caption p {
+			font-size: 24px;
+			line-height: 1.5;
+			font-weight: 400;
+		}
+		h2 {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-weight: 700;
+		  margin: 30px 0;
+			text-transform: uppercase;
+			font-size: 70px;
+			line-height: 1;
+		}
+
+		.caption-image{
+			width: 50%;
+			img{
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+
+
+	}
+}
+
+// Mobile CSS ---------------------------------------------
+@media only screen and (max-width: 980px) {
+	width: 100%;
+	height: 400px;
+	#slider.slider-style-1 {
+		.swiper-slide{
+			.slider-caption{
+				top: 20px;
+			}
+			.slider-caption p {
+				font-size: 16px;
+				line-height: 1.5;
+			}
+			h2 {
+				font-size: 35px;
+				line-height: 1;
+				margin: 15px 0px;
+			}
+		}
+
+}
+
+}
+@media only screen and (max-width: 780px) {
+	width: 100%;
+	height: 400px;
+	#slider.slider-style-1 {
+		.swiper-slide{
+			.slider-caption{
+				top: 50px;
+			}
+			.slider-caption p {
+				font-size: 18px;
+				line-height: 1.5;
+			}
+			h2 {
+				font-size: 30px;
+				line-height: 1;
+				margin: 10px 0px;
+			}
+			a.btn{
+				font-size: 12px;
+			}
+		}
+
+	}
+
+}
+
+@media only screen and (max-width: 420px) {
+	#slider.slider-style-1 {
+		width: 100%;
+		height: 300px;
+		.swiper-slide{
+			.slider-caption{ 
+				top: 0;
+			}
+			.slider-caption p {
+				font-size: 12px;
+				line-height: 1.5;
+			}
+			h2 {
+				font-size: 20px;
+				line-height: 1;
+				margin: 10px 0px;
+			}
+			a.btn{
+				font-size: 12px;
+			}
+		}
+
+	}
+
+}

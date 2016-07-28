@@ -1,0 +1,30 @@
+.loginregistation{
+  .social-icons{
+    text-align: center;
+    ul li:hover i {
+      @include animation(none);
+    }
+  }
+
+  .vartical-ro {
+      border-left: 2px solid #ddd;
+      height: 100%;
+      position: absolute;
+      right: 10px;
+      top: 0;
+      width: 0;
+          span {
+            background: #ddd none repeat scroll 0 0;
+            border-radius: 50%;
+            font-size: 18px;
+            left: -23px;
+            padding: 9px;
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            top: 44%;
+        }
+    }
+
+
+}

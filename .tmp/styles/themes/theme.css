@@ -1,0 +1,12 @@
+/* line 1, ../../../app/styles/themes/theme.scss */
+.amScrollToTop {
+  background: #ccc none repeat scroll 0 0;
+  bottom: 149px;
+  padding: 4px 8px;
+  position: fixed;
+  right: 50px;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=theme.css.map */

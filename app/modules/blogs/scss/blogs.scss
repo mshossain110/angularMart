@@ -1,0 +1,227 @@
+.post {
+  display: block;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  position: relative;
+
+  .title h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .post-content{
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .post-image,
+  .feature-image img{
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+  }
+
+  .post-date {
+    position: relative;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    float: left;
+    width: 66px;
+    span {
+     display: block;
+   }
+  }
+
+  .meta {
+    border-bottom: 1px solid #f00;
+    border-top: 1px solid #f00;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 2px 5px;
+    a{
+      display: inline-block;
+      font-size: 12px;
+    }
+    i{
+      font-size: 12px;
+    }
+
+    .author{
+      display: inline-block;
+    }
+
+    .category {
+      display: inline-block;
+
+      a{
+        padding-right: 5px;
+        padding-left: 5px;
+        position: relative;
+        &::after{
+          background: #333 none repeat scroll 0 0;
+          content: " ";
+          display: block;
+          height: 9px;
+          position: absolute;
+          right: 0;
+          top: 31%;
+          width: 1px;
+        }
+        &:last-child::after{
+          background: transparent;
+        }
+      }
+    }
+
+    .post-status {
+      float: right;
+    }
+  }
+
+
+
+
+
+  &.post-list-style{
+
+    .feature-image {
+      float: left;
+      margin-right: 20px;
+      width: 380px;
+    }
+
+    .title, .post-content{
+      margin-left: 400px;
+    }
+
+    .meta {
+      bottom: 20px;
+      position: absolute;
+      right: 0;
+      width: 453px;
+    }
+
+  }
+
+  &.post-listClasic-style {
+      .feature-image {
+        position: relative;
+        max-height: 400px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        width: 100%;
+
+        .image-hover {
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1111;
+
+            &::after, &::before{
+              border-color: transparent transparent transparent #f55;
+              border-style: solid;
+              border-width: 400px 0 0 850px;
+              content: "";
+              display: block;
+              height: 0;
+              left: 0;
+              position: absolute;
+              top: 0;
+              width: 0;
+            }
+            &::before{
+              border-color: transparent #f00 transparent transparent;
+              border-style: solid;
+              border-width: 0 850px 400px 0;
+            }
+        }
+      }
+
+    .title {
+      margin-left: 100px;
+    }
+
+    .post-date {
+    }
+
+    .post-content {
+      margin-left: 100px;
+    }
+  }
+
+}
+/*******************sidbar widget*******************/
+
+/*widget-recent-post*/
+.widget {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.widget h3 {
+  border-bottom: 6px double #eaeaea;
+  font-size: 1.5em;
+}
+.widget-recent-post li {
+  border-bottom: 1px solid #ddd;
+  display: block;
+  overflow: hidden;
+  padding: 5px 0;
+}
+.widget-recent-post li img {
+  float: left;
+  height: auto;
+  margin-right: 10px;
+  width: 80px;
+}
+.widget-recent-post li h4 {
+  font-size: 17px;
+  margin: 0;
+}
+.widget-recent-post .post-status{
+  float: none;
+  display: block;
+}
+.widget-recent-post .post-status li {
+  border: medium none;
+  display: inline;
+  font-size: 11px;
+  padding: 0 2px;
+  text-align: left;
+}
+
+/*widget category*/
+.widget-category li a .fa {
+  font-size: 13px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.widget-category li a {
+  display: block;
+  padding: 3px 10px;
+  margin-left: 10px;
+  color: #444;
+  border-bottom: 1px solid #EAEAEA;
+}
+/*widget Tag*/
+
+.widget-tag a:hover {
+    background: #e0e0e0;
+}
+.widget-tag a {
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid #EAEAEA;
+    margin: 3px;
+    color: #444;
+}

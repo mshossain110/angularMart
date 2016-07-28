@@ -1,0 +1,83 @@
+.tabs-container{
+    display: block;
+    overflow: hidden;
+    clear: both;
+  .tabs-title{
+      display: table;
+    span{
+      display: table-cell;
+      padding: 10px;
+      cursor: pointer;
+      border-top: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      text-align: center;
+      text-transform: uppercase;
+      &.active{
+        border-top: 3px solid $baseColor;
+      }
+      &:first-child{
+        border-left: 1px solid #ddd;
+      }
+      .fa, i{ margin-right: 5px;}
+    }
+  }
+
+  .tab-content{
+    display: block;
+    border:1px solid #ddd;
+
+    .tab-pane{
+      padding: 10px;
+      overflow: hidden;
+    }
+  }
+
+  /* animation */
+.ng-hide-add { @include animation(0.2s slideOutUp); }
+.ng-hide-remove{   @include animation(0.2s slideInUp); }
+
+&.justified{
+  .tabs-title{
+    width: 100%;
+  }
+}
+
+&.tabcolor{
+  .tabs-title span{
+    background-color: #636363;
+    color: $light;
+  }
+  .tabs-title span.active{
+    background-color: $baseColor;
+    border-top: medium none;
+  }
+}
+
+&.vertical{
+  .tabs-title{
+    float: left;
+    overflow: hidden;
+
+    width: 20%;
+    span{
+      border-left: 1px solid #ddd;
+    border-right: medium none;
+    display: block;
+    text-align: left;
+    &:last-child{
+      border-bottom: 1px solid #ddd;
+    }
+    &.active{
+      border: 3px solid $baseColor;
+      border-right:medium none;
+    }
+    }
+  }
+  .tab-content{
+    width: 80%;
+    overflow: hidden;
+    float: left;
+  }
+}
+
+}

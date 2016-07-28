@@ -1,0 +1,65 @@
+
+// =============================================================================
+// COLORS
+// =============================================================================
+$defaultColor: #777;
+$baseColor : #B52E31;
+$linkColor : $baseColor;
+
+// Light Version
+$light: #ffffff;
+$snow:#FFFAFA;
+$redlight: #EEEEEE;
+$dark: #1c1c1c;
+$gray:#808080;
+$lightGrey:rgba(218, 218, 218, 0.61);
+$darkGrey:#707070;
+
+
+$footer-bg: #1c1c1c;
+
+$navColor:$defaultColor;
+$navhoverColor:$baseColor;
+$input-color-placeholder:#D3D3D3;
+
+// =============================================================================
+// TYPOGRAPHY
+// =============================================================================
+$font-primary:'Lato', sans-serif;
+$body-font-size: 16px;
+$root-font-size: 16px;
+$body-line-height: 23px;
+
+$heading-font: 'Source Sans Pro', sans-serif;
+$heading-font-weight:700;
+$headignColor: #6a6a6a;
+
+// weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+//space
+$vertical: 10;
+$horizontal:50;
+
+
+//header
+$headerHeight:80px;
+
+//shop-page
+$shop-grid :4;
+$shop-height:370px;
+$shop-color:#303030;
+
+//order radius
+$border-radius-sm:5px;
+$border-radius-md:15px;
+//input
+$input-label-color: #877070;
+$input-placeholder: #d4d4d4;
+$input-success:rgb(46, 105, 9);
+$input-warning:rgb(254, 145, 76);
+$input-danger:rgb(130, 31, 14);
+$input-info:rgb(187, 187, 96);

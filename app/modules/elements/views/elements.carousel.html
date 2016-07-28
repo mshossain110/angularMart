@@ -1,0 +1,107 @@
+<am-page-title displayname-property="data.title"></am-page-title>
+
+<div class="container-fluid amProducts">
+  <div class="container">
+    <div class="row">
+          <div class="amtitle title-double-border shape-sd">
+            <h3><span class="fa fa-desktop"></span>  Basic carousel</h3>
+          </div>
+
+      <div class="amcarousel" autoplay="5000">
+        <!-- Navigation -->
+       <div class="amCarousel-button-next"><i class="fa fa-chevron-right" ></i></div>
+       <div class="amCarousel-button-prev"><i class="fa fa-chevron-left" ></i></div>
+
+       <div class="swiper-wrapper">
+         <div class="swiper-slide product-outer marginSmBottom" ng-repeat="product in p.getProductByID([18, 5, 6, 8, 10, 13, 14, 12])">
+           <div class="product-inner">
+             <div class="product">
+
+               <div class="feature-image">
+                 <a ng-href="#/shop/{{product.ID}}"><img src="{{product.src}}" class="img-responsive" alt="AdidasHoodie" /></a>
+               </div>
+
+               <div class="product-details">
+                 <div class="title">
+                   <a  ng-href="#/shop/{{product.ID}}" ng-bind="product.title"></a>
+                 </div>
+                 <div class="meta clearfix">
+                   <span class="price">{{product.price | currency:"$":2}}</span>
+                   <div class="rating">
+                     <star-rating ng-model="rading" read-only="true" ></star-rating>
+                   </div>
+                 </div>
+                 <div ng-hide="!listView" class="description" ng-bind-html="p.HTMLParsing(product.description)"></div>
+                 <div class="addtoCart">
+                   <button class="btn btn-light l" title="Add to wishlist" ><i class="fa fa-heart"></i></button>
+                   <button class="btn btn-5" ng-click="amCart.addItem(product.ID, product.title, product.src, product.price, 1)" title="Add to Cart"  href="#"><i class="fa fa-shopping-cart"></i>  Add to cart</button>
+                   <button class="btn btn-light r" title="Add to compear"><i class="fa fa-exchange"></i></button>
+
+                 </div>
+
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+   </div>
+
+    </div>
+
+
+    <div class="row">
+
+
+
+          <div class="amtitle title-double-border shape-sd">
+            <h3><span class="fa fa-laptop"></span>  Two coloum carousel</h3>
+          </div>
+
+
+
+      <div class="amcarousel"   slides-per-column="2">
+        <!-- Navigation -->
+       <div class="amCarousel-button-next"><i class="fa fa-chevron-right" ></i></div>
+       <div class="amCarousel-button-prev"><i class="fa fa-chevron-left" ></i></div>
+
+       <div class="swiper-wrapper">
+         <div class="swiper-slide product-outer marginSmBottom" ng-repeat="product in p.getProductByCategory(['man', 'woman', 'child'])">
+           <div class="product-inner">
+             <div class="product">
+
+               <div class="feature-image">
+                 <a ng-href="#/shop/{{product.ID}}"><img src="{{product.src}}" class="img-responsive" alt="AdidasHoodie" /></a>
+               </div>
+
+               <div class="product-details">
+                 <div class="title">
+                   <a  ng-href="#/shop/{{product.ID}}" ng-bind="product.title"></a>
+                 </div>
+                 <div class="meta clearfix">
+                   <span class="price">{{product.price | currency:"$":2}}</span>
+                   <div class="rating">
+                     <star-rating ng-model="rading" read-only="true" ></star-rating>
+                   </div>
+                 </div>
+                 <div ng-hide="!listView" class="description" ng-bind-html="p.HTMLParsing(product.description)"></div>
+                 <div class="addtoCart">
+                   <button class="btn btn-light l" title="Add to wishlist" ><i class="fa fa-heart"></i></button>
+                   <button class="btn btn-5" ng-click="amCart.addItem(product.ID, product.title, product.src, product.price, 1)" title="Add to Cart"  href="#"><i class="fa fa-shopping-cart"></i>  Add to cart</button>
+                   <button class="btn btn-light r" title="Add to compear"><i class="fa fa-exchange"></i></button>
+
+                 </div>
+
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+
+
+   </div>
+
+    </div>
+  </div>
+</div>

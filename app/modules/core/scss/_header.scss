@@ -1,0 +1,787 @@
+// header scss file
+// * content
+// 		** header
+//		** fixed nav
+//		** logo
+//		** cart
+//		** search
+//		** main navigation
+//		** Navigation animation style
+//		** Mobile header
+// 		**
+
+/*header style---------------------*/
+// header --------------------------
+#header{
+	height: $headerHeight;
+	background: $light;
+
+	@include transition(all 0.6s linear);
+
+	.container{
+		position: relative;
+	}
+
+	#logo,
+	.menu_area,
+	.cart,
+	.search,
+	.currency-convator {
+	  display: table-cell;
+	  line-height: $headerHeight;
+	}
+
+	.cart,
+	.search,
+	.currency-convator  {
+	  float: right;
+	  padding: 0 10px;
+	  text-align: center;
+		cursor: pointer;
+	}
+	.cart{
+		position: relative;
+	}
+
+	.menu_area {
+	  float: right;
+	}
+
+}
+
+//fixed nav------------------------------
+body.top-fixed-nav{
+	#header {
+		background-color:$light ;
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 100;
+		height: $headerHeight - 20;
+	}
+
+	.amNav .ngmenu-items .megamenu,
+	.amNav .ngmenu-items .submenu.level1 {
+	  top: $headerHeight - 20;
+	}
+
+	#header #logo,
+	#header .menu_area,
+	#header .cart,
+	#header .search,
+	{
+		line-height: $headerHeight - 20;
+	}
+	.amNav .ngmenu-items li > a{
+		line-height: $headerHeight - 40;
+	}
+}
+
+
+// logo -------------------------------
+#logo {
+	position: relative;
+	float: left;
+	font-family: $font-primary;
+	line-height: 100%;
+	margin-right: 40px;
+
+	a {
+		display: block;
+		color: #000;
+	}
+}
+// cart ------------------------------------
+#header .cart{
+	sup{
+		color: $baseColor;
+		font-size: 18px;
+	}
+
+	.cart-dd {
+		@include transform-origin(0% 0%);
+		@include box-shadow(0 13px 41px 11px rgba(0,0,0,.075));
+		@include border-top-radius(5px);
+		@include border-bottom-radius(5px);
+	  background: #fff none repeat scroll 0 0;
+	  overflow: hidden;
+	  position: absolute;
+	  right: -4px;
+	  line-height: normal !important;
+	  top: 60px;
+	  width: 300px;
+	  z-index: 100;
+	  border-top: 3px solid $baseColor;
+	  border-bottom: 3px solid $baseColor;
+		opacity: 0;
+		visibility: hidden;
+		-o-transition: -o-transform 500ms, opacity 500ms;
+		-ms-transition: -ms-transform 500ms, opacity 500ms;
+		-moz-transition: -moz-transform 500ms, opacity 500ms;
+		-webkit-transition: -webkit-transform 500ms, opacity 500ms;
+		transition: transform 500ms, opacity 500ms;
+		transform-style: preserve-3d;
+		-o-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		-webkit-transform-style: preserve-3d;
+
+		li {
+		  border-bottom: 1px solid #ddd;
+		  clear: both;
+		  overflow: hidden;
+		  display: block;
+		  padding: 5px 10px;
+
+			img {
+			  display: inline-block;
+			  width: 50px;
+			  float: left;
+			}
+
+			.itemsde{
+			  text-align: right;
+			  display: inline-block;
+			  line-height: 0;
+			}
+		}
+	}
+	.cart-ddf, .cart-ddh{
+	  padding: 15px 10px;
+	  background: #eee;
+	  overflow: hidden;
+	  display: block;
+	  clear: both;
+	  text-transform: uppercase;
+	  color: $defaultColor;
+	}
+
+	.cart-ddh span{
+		&:first-child{
+		  text-align: left;
+		  float: left;
+		}
+		&:last-child{
+		  text-align: right;
+		  float: right;
+		}
+	}
+}
+
+#header.cart-active .cart-dd {
+  opacity: 1;
+	visibility: visible;
+}
+
+
+//search --------------------------------
+#header .search{
+	i.sicon{
+		display: inline-block;
+		font: normal normal normal 14px/1 FontAwesome;
+		font-size: inherit;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		z-index: 11;
+	}
+
+	i.sicon:before {
+		content: "\f002";
+	}
+
+	form {
+	  height: 100% !important;
+	  left: 0;
+	  margin: 0;
+	  opacity: 0;
+	  padding: 0 15px;
+	  position: absolute;
+	  top: 0;
+	  transition: opacity 0.2s ease-in-out 0s;
+	  width: 98% !important;
+	  z-index: -2;
+		@include box-shadow(0 -2px 4px -2px #b8b8b8 inset);
+
+		input {
+		  background-color: transparent;
+		  border: 0 none;
+		  border-radius: 0;
+		  box-shadow: none !important;
+		  font-size: 30px;
+		  height: 100%;
+		  letter-spacing: 2px;
+		  outline: 0 none;
+		  padding: 0 70px 0 0;
+		}
+	}
+
+}
+
+#header.search-active{
+	.search i.sicon:before {
+		content: "\f00d";
+	}
+
+	.search form {
+	  opacity: 1;
+	  z-index: 10;
+	}
+
+	.menu_area,
+	.cart,
+	#navtoggle,
+	.smallogo ,
+	#logo {
+	  display: none !important;
+	}
+
+}
+
+/*navigation css -----------------------------------------*/
+
+.amNav {
+	font-family: $font-primary;
+	font-size:14px;
+	padding:0px;
+	margin:0px auto;
+	background: transparent;
+  .ngmenu-items{
+  	text-align:right;
+  	margin:0 auto;
+  	width:100%;
+  	display: block;
+  	padding:0px;
+
+    li{
+    	text-align:center;
+    	display: inline-block;;
+      & >a{
+				@include transition(all 0.4s easy);
+      	display:block;
+				font-size: 17px;
+				text-transform: uppercase;
+      	padding:10px;
+				height: $headerHeight;
+        line-height:$headerHeight - 20;
+      	text-decoration:none;
+      	position:relative;
+				color: $defaultColor;
+
+					&:hover, &:active, &:focus{
+	          color:$baseColor;
+	        }
+      	}
+
+	        &:hover .megamenu,
+					&:hover > .submenu
+					{opacity:1; display: block;visibility:visible;}
+
+    }
+
+			& > li >a .arrow{
+				display: none;
+			}
+
+      .fa{
+      	display: inline-block;
+      	line-height:inherit;
+      	margin-right:5px;
+        margin-left: 2px;
+      }
+
+
+			.arrow{
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				display: inline-block;
+				font-family: FontAwesome;
+				font-size: inherit;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+
+			}
+			.arrow::before{content: "\f107";}
+			.submenu li .arrow{float: right;}
+			.submenu li .arrow::before{content: "\f105";}
+			.megamenu, .submenu{
+				@include box-shadow(0 13px 41px 11px rgba(0,0,0,.075));
+				@include transform-origin(0% 0%);
+				@include border-top-radius(5px);
+				background: $light;
+				color: $defaultColor;
+				position:absolute;
+				z-index:1000;
+				margin:0px;
+				text-align:left;
+				border-top: 3px solid $baseColor;
+
+				-o-transition: -o-transform 500ms, opacity 500ms;
+				-ms-transition: -ms-transform 500ms, opacity 500ms;
+				-moz-transition: -moz-transform 500ms, opacity 500ms;
+				-webkit-transition: -webkit-transform 500ms, opacity 500ms;
+				transition: transform 500ms, opacity 500ms;
+				transform-style: preserve-3d;
+				-o-transform-style: preserve-3d;
+				-moz-transform-style: preserve-3d;
+				-webkit-transform-style: preserve-3d;
+				visibility:hidden;
+			}
+
+
+      .megamenu{
+      	width:100%;
+      	left:0px;
+      	top:$headerHeight;
+      	padding:14px;
+      	opacity: 0;
+        .title{
+        	border-bottom:1px solid #CCC;
+        	padding:9px 5px 9px 0px;
+        	font-size:17px;
+					line-height: 17px;
+        	margin:0px 0px 7px 0px;
+        	text-align:left;
+        }
+
+          li{
+        	display:block;
+        	white-space:nowrap;
+        	text-align:left;
+					float: none;
+          a{
+						@include transition(all 0.4s linear);
+          	line-height:normal !important;
+          	text-align:$left;
+						height: 35px;
+          	padding: 7px 20px;
+						padding-#{$left}: 0;
+          	border-right: 0 none !important;
+          	display:block;
+            text-transform: capitalize;
+						font-size:14px;
+						&:hover{
+							padding-#{$left}: 10px;
+						}
+          }
+        }
+
+      }
+
+      .submenu{
+      	top: 0px;
+        min-width:180px;
+
+
+        &.level1{
+					top: $headerHeight;
+					 opacity: 0;
+				 }
+
+        &.level2{ left:100%; opacity: 0;}
+        &.level3{ left:100%; opacity: 0;}
+				&.inverse{ left: auto; right: 100%;}
+
+        li{
+          position:relative;
+          padding:0px;
+          margin:0px;
+          display:block;
+					float: none;
+          a {
+						@include transition(all 0.4s linear);
+           border-right: 0 none !important;
+					 border-bottom: 1px solid #eee;
+           display:block;
+           line-height:normal !important;
+					 padding: 10px 15px;
+					 height: 40px;
+           text-transform:none;
+           letter-spacing:normal;
+           border-right:0px solid;
+					 text-align: $left;
+					 font-size:14px;
+					 &:hover{
+						 padding-#{$left}: 20px;
+					 }
+
+           span.fa {
+                float: right;
+                text-align: right;
+            }
+         }
+
+         &:hover .level1{
+           display:block;
+           opacity: 1;
+           a span.fa
+           {
+             float: right;
+             text-align: right !important;
+           }
+
+           li:hover .level2{
+             opacity:1;
+              list-style:none;
+              padding:2px;
+              display:block;
+
+              li:hover .level3{
+                opacity:1;
+                list-style:none;
+                padding:2px;
+                display:block;
+              }
+            }
+          }
+        }
+      }//submenu
+
+    }
+
+}//ngmenu
+
+//navigation animation---------------------------
+.sweepToRight .ngmenu-items li > .submenu,
+.sweepToRight .ngmenu-items li > .megamenu{
+	-o-transform-origin: 100% 0%;
+	-ms-transform-origin: 100% 0%;
+	-moz-transform-origin:100% 0%;
+	-webkit-transform-origin: 100% 0%;
+	transform: rotateY(-75deg);
+	-o-transform: rotateY(-75deg);
+	-moz-transform: rotateY(-75deg);
+	-webkit-transform: rotateY(-75deg);
+	visibility:hidden;
+}
+.sweepToRight .ngmenu-items li:hover > .submenu,
+.sweepToRight .ngmenu-items li:hover > .megamenu{
+	transform: rotateY(0deg);
+	-o-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	-webkit-transform: rotateY(0deg);
+	opacity: 1;
+	visibility:visible;
+}
+.sweepToLeft .ngmenu-items li > .submenu, .sweepToLeft .ngmenu-items li > .megamenu{
+	transform: rotateY(-75deg);
+	-o-transform: rotateY(-75deg);
+	-moz-transform: rotateY(-75deg);
+	-webkit-transform: rotateY(-75deg);
+	visibility:hidden;
+}
+.sweepToLeft .ngmenu-items li:hover > .submenu, .sweepToLeft .ngmenu-items li:hover > .megamenu{
+	transform: rotateY(0deg);
+	-o-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	-webkit-transform: rotateY(0deg);
+	opacity: 1;
+	visibility:visible;
+}
+
+.cart-dd,
+.sweepToTop .ngmenu-items li > .submenu,
+.sweepToTop .ngmenu-items li > .megamenu{
+	transform: rotateX(-75deg);
+	-o-transform: rotateX(-75deg);
+	-moz-transform: rotateX(-75deg);
+	-webkit-transform: rotateX(-75deg);
+	visibility:hidden;
+}
+.cart-active .cart-dd,
+.sweepToTop .ngmenu-items li:hover > .submenu,
+ .sweepToTop .ngmenu-items li:hover > .megamenu{
+	transform: rotateX(0deg);
+	-o-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg);
+	-webkit-transform: rotateX(0deg);
+	opacity: 1;
+	visibility:visible;
+}
+
+.sweepToBottom .ngmenu-items li > .submenu, .sweepToBottom .ngmenu-items li > .megamenu{
+	-o-transform-origin: 0% 100%;
+	-ms-transform-origin: 0% 100%;
+	-moz-transform-origin: 0% 100%;
+	-webkit-transform-origin: 0% 100%;
+	transform: rotateX(-75deg);
+	-o-transform: rotateX(-75deg);
+	-moz-transform: rotateX(-75deg);
+	-webkit-transform: rotateX(-75deg);
+	visibility:hidden;
+}
+.sweepToBottom .ngmenu-items li:hover > .submenu, .sweepToBottom .ngmenu-items li:hover > .megamenu{
+	transform: rotateX(0deg);
+	-o-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg);
+	-webkit-transform: rotateX(0deg);
+	opacity: 1;
+	visibility:visible;
+}
+.scaleLeft .ngmenu-items li > .submenu, .scaleLeft .ngmenu-items li > .megamenu{
+	transform: scale3d(0,0,0);
+	-o-transform: scale3d(0,0,0);
+	-moz-transform: scale3d(0,0,0);
+	-webkit-transform: scale3d(0,0,0);
+	visibility:hidden;
+}
+.scaleLeft .ngmenu-items li:hover > .submenu, .scaleLeft .ngmenu-items li:hover > .megamenu{
+	transform: scale3d(1,1,1);
+	-o-transform: scale3d(1,1,1);
+	-moz-transform: scale3d(1,1,1);
+	-webkit-transform: scale3d(1,1,1);
+	opacity: 1;
+	visibility:visible;
+}
+
+.scaleRight .ngmenu-items li > .submenu, .scaleRight .ngmenu-items li > .megamenu{
+	-o-transform-origin: 100% 0%;
+	-ms-transform-origin: 100% 0%;
+	-moz-transform-origin: 100% 0%;
+	-webkit-transform-origin: 100% 0%;
+	transform: scale3d(0,0,0);
+	-o-transform: scale3d(0,0,0);
+	-moz-transform: scale3d(0,0,0);
+	-webkit-transform: scale3d(0,0,0);
+	visibility:hidden;
+}
+.scaleRight .ngmenu-items li:hover > .submenu, .scaleRight .ngmenu-items li:hover > .megamenu{
+	transform: scale3d(1,1,1);
+	-o-transform: scale3d(1,1,1);
+	-moz-transform: scale3d(1,1,1);
+	-webkit-transform: scale3d(1,1,1);
+	opacity: 1;
+	visibility:visible;
+}
+
+.scaleCenter .ngmenu-items li > .submenu, .scaleCenter .ngmenu-items li > .megamenu{
+	-o-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	-webkit-transform-origin: 50% 50%;
+	transform: scale3d(0,0,0);
+	-o-transform: scale3d(0,0,0);
+	-moz-transform: scale3d(0,0,0);
+	-webkit-transform: scale3d(0,0,0);
+	visibility:hidden;
+}
+.scaleCenter .ngmenu-items li:hover > .submenu, .scaleCenter .ngmenu-items li:hover > .megamenu{
+	transform: scale3d(1,1,1);
+	-o-transform: scale3d(1,1,1);
+	-moz-transform: scale3d(1,1,1);
+	-webkit-transform: scale3d(1,1,1);
+	opacity: 1;
+	visibility:visible;
+}
+
+
+//mobile header----------------------------------
+#header .mobileheader {
+	@include transition(all 0.4s ease-in-out);
+	@include gradient-vertical($baseColor, darken($baseColor, 10%));
+	//background: $dark none repeat scroll 0 0;
+	color: $light;
+	display: none;
+	width: 100%;
+	position:relative;
+	top:0;
+	right:0;
+	left:0;
+	line-height: 60px;
+
+	#navtoggle,
+	.smallogo,
+	.search,
+	.cart
+ 		{
+		color: $light;
+		line-height: 60px;
+		display: inline-block;
+		text-align: center;
+	}
+	.cart sup {
+  color:$light;
+
+	}
+
+	a {
+		color: $light;
+		display: block;
+		font-size: 24px;
+		padding: 0px 10px;
+		text-align: center;
+		text-decoration: none;
+		vertical-align: middle;
+	}
+
+	.animated-arrow{
+		display: inline-block;
+		font: normal normal normal 14px/1 FontAwesome;
+		font-size: inherit;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		}
+
+		.animated-arrow:before {
+			content: "\f0c9";
+		}
+
+}
+body.ngmenu-left{
+	.mobileheader .animated-arrow:before{
+	content: "\f00d";
+	}
+
+	#header .header-wrapper{
+		left:0px;
+	}
+
+	.wrapper{
+		display:block;
+		margin-left:240px;
+		margin-right: -240px;
+	}
+}
+body.ngmenu-left.top-fixed-nav .mobileheader {
+  margin-left: 220px;
+}
+//Responsive------------------------------
+  @media only screen and (min-width:780px) and (max-width:1023px) {
+		.amNav .ngmenu-items li > a{
+			font-size: 14px;
+			white-space:nowrap !important;
+			 padding-left:4px !important;
+			  padding-right:4px !important;
+			}
+
+  }
+
+
+  @media only screen and (min-width: 781px) {
+
+  .ngmenu-items li:hover > .submenu{display:block !important;}
+  .ngmenu-items li:hover > .megamenu{display:block !important;}
+
+  }
+
+  // Mobile CSS ---------------------------------------------
+  @media only screen and (max-width: 780px) {
+		#header .mobileheader{
+			display: block;
+		}
+		#header .header-wrapper{
+			@include transition(all 0.4s ease-in-out);
+			background: $light;
+			width:240px;
+			border-right: 2px solid #ddd;
+    	left:-240px;
+    	height: 100%;
+			overflow-y:auto;
+    	position: fixed;
+			top: 0;
+			z-index:103;
+			.search, .cart{
+				display: none;
+			}
+
+			#logo {
+			  display: block;
+				margin: 0;
+			  padding: 10px 0px;
+			  text-align: center;
+			  width: 100%;
+			}
+			.menu_area {
+			  display: block;
+			  float: none;
+			}
+		}
+
+    .amNav {
+			width: 100%;
+    	margin: 0;
+    	border:none !important;
+      .ngmenu-items{
+        width: 100%;
+        display:block !important;
+
+        li{
+        	width:100%;
+        	display:block;
+        	float:none;
+        	background:transparent;
+        	position:relative;
+        	white-space:inherit;
+          a{
+          	padding:9px 32px 9px 17px;
+          	font-size:14px;
+          	text-align:left;
+          	line-height: normal !important;
+          	border-bottom:1px solid;
+          	border-bottom-color:rgba(0,0,0,0.13);
+          	position:static;
+
+            .fa{font-size: 16px; margin-right:6px;}
+
+          	}
+            &:hover .megamenu, &:hover .submenu{
+              display:none;
+              text-decoration: none;
+              position:relative !important;
+              top:0px;
+            }
+        }
+
+				& > li >a .arrow{
+					display: inline-block;
+					float: right;
+				}
+				.submenu li .arrow::before{content: "\f107";}
+				.ngopen >a >.arrow::before{content: "\f106";}
+
+        .submenu{
+					@include border-top-radius(0px);
+          width:100% !important;
+        	transform:none !important;
+        	opacity:1 !important;
+        	display:none;
+        	position:relative !important;
+        	top:0px !important;
+          left:0 !important;
+        	border-bottom:solid 1px #ccc;
+        	padding:0px;
+        	visibility:visible !important;
+          li{
+            margin:0px 0px 0px 0px !important;
+            a{
+              display:block;
+							line-height: normal !important;
+            }
+          }
+          &.level2, &.level3{
+          	position:static !important;
+
+          	}
+
+        	}
+
+
+          .megamenu{
+						@include border-top-radius(0px);
+          	display:none;
+          	position:relative !important;
+          	top:0px;
+          	padding:0px;
+          	border:solid 0px;
+          	transform:none !important;
+          	opacity:1 !important;
+          	visibility:visible !important;
+            .title{ font-size:15px !important; padding:10px 8px 10px 0px;}
+
+          	}
+    	}//ngmenu-items
+  }//ngmenu
+ }// @media

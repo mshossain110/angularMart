@@ -1,0 +1,200 @@
+ <!-- /*
+ ** controller: productCtrl as vm
+  ** @description:
+  ** Shop left page
+  **/ -->
+
+
+<!-- Page title directive -->
+<am-page-title displayname-property="data.title"></am-page-title>
+
+<!-- shop page section -->
+<section class="container-fluid paddingHorizontal shop-page page-leftSidebar" ng-class="{'openfilterbar': vm.isFilterbarOpern, 'list-view': vm.listView}">
+  <div class="container clearfix">
+    <div class="row">
+
+        <!-- filter sidebar  start  -->
+        <sidebar class="filter-sidebar">
+            <!-- category filter -->
+            <div class="filter-area ">
+              <div class="fcat marginBottom am-forms">
+                    <h4>Categories</h4>
+
+
+                      <div class="am-checkbox colored" ng-repeat=" cat in vm.categories">
+                          <label>
+                            <input type="checkbox" ng-click="vm.filters.setFilter('category', cat)">
+                            <span class="checked"></span>
+                            <span class="am-label">{{cat}}</span>
+                          </lable>
+                      </div>
+
+
+
+              </div>
+            </div>
+
+            <!-- price range slider -->
+            <div class="filter-area ">
+              <div class="fpr marginBottom">
+                <h4>Price range </h4>
+                <rzslider rz-slider-model="vm.priceRange.minValue" rz-slider-high="vm.priceRange.maxValue" rz-slider-options="vm.priceRange.options" ></rzslider>
+              </div>
+            </div>
+
+            <!-- color filter -->
+            <div class="filter-area" >
+              <div class="fcol marginBottom">
+                    <h4>Colors</h4>
+
+                    <div class="am-checkbox colored" ng-repeat="color in vm.colors">
+                        <label>
+                          <input type="checkbox" ng-click="vm.filters.setFilter('colors', color)">
+                          <span class="checked"></span>
+                          <span class="am-label">{{color}}</span>
+                        </lable>
+                    </div>
+              </div>
+            </div>
+
+            <!-- size filter -->
+            <div class="filter-area" >
+              <div class="fsiz marginBottom">
+
+                    <h4>Sizes</h4>
+
+                    <div class="am-checkbox colored" ng-repeat="size in vm.sizes">
+                        <label>
+                          <input type="checkbox" ng-click="vm.filters.setFilter('sizes', size)">
+                          <span class="checked"></span>
+                          <span class="am-label">{{size | uppercase}}</span>
+                        </lable>
+                    </div>
+
+              </div>
+            </div>
+
+            <!-- Brand filters -->
+            <div class="filter-area" >
+                <div class="fbrd marginBottom">
+                    <h4>Brands</h4>
+
+                    <div class="am-checkbox colored" ng-repeat="brand in vm.brands">
+                        <label>
+                          <input type="checkbox" ng-click="vm.filters.setFilter('brand', brand)">
+                          <span class="checked"></span>
+                          <span class="am-label">{{brand}}</span>
+                        </lable>
+                    </div>
+
+                </div>
+            </div>
+
+        </sidebar>
+        <!-- filter sidebar end  -->
+
+        <!-- product container start -->
+        <div class="products-container clearfix ">
+
+          <div class="vmontrol-box clearfix">
+
+                <div class="col-md-4">
+                  <!-- display buttons -->
+                  <button class="btn btn-5 ft" ng-class="{active: vm.isFilterbarOpern}" ng-click="vm.toggleFilterbar()" ><i class="fa fa-navicon"></i></button>
+                  <button class="btn btn-5 gt" ng-class="{active: vm.listView}" ng-click="vm.listView=true" ><i class="fa fa-list"></i></button>
+                  <button class="btn btn-5 gt"  ng-class="{active: !vm.listView}" ng-click="vm.listView=false" ><i class="fa fa-th"></i></button>
+
+                </div>
+
+                <!-- sorting -->
+                <div class="col-md-4">
+
+                      <select class="form-control" aria-label="ngSelected" ng-model="vm.sortby">
+                        <option value="" selected="selected">Sort by: Newest items</option>
+                        <option value="price">Price: low to high</option>
+                        <option id="greet" value="-price">Price: high to low</option>
+                        <option value="rating">rating: low to high</option>
+                        <option id="greet" value="-rating">rating: high to low</option>
+                      </select>
+
+                </div>
+
+                <div class="col-md-4">
+                  <div class="ipp text-right">
+                    <span>Item per page</span>
+                    <input type="number" ng-model="vm.itemsPerPage"  min="8" max="40" class="form-control">
+                  </div>
+                </div>
+
+
+
+          </div>
+
+          <!-- priduct section start  -->
+          <div class="products-entry clearfix">
+
+            <article class="product-outer" ng-repeat="product in vm.pagedItems| orderBy:vm.sortby">
+              <div class="product-inner" am-animate="zoomIn">
+                <div class="product">
+                  <!-- product feature image  -->
+                  <div class="feature-image">
+                    <a ng-href="#/shop/{{product._id}}"><img ng-src="{{product.src[0]}}" class="img-responsive" alt="AdidasHoodie" /></a>
+                  </div>
+
+                  <div class="product-details">
+                    <!-- product title -->
+                    <div class="title">
+                      <a  ng-href="#/shop/{{product._id}}" ng-bind="product.title"></a>
+                    </div>
+
+                    <!-- price and rating -->
+                    <div class="meta clearfix">
+                      <span class="price">{{product.price | currency:"$":2}}</span>
+
+                      <div class="rating">
+                        <star-rating ng-model="product.rating" read-only="true" ></star-rating>
+                      </div>
+                    </div>
+
+                    <!-- product description -->
+                    <div ng-hide="!vm.listView" class="description" ng-bind-html="vm.parseContent(product.description)"></div>
+
+                    <!-- add to wish list. add to cart, compare buttons -->
+                    <div class="addtoCart">
+                      <button class="btn btn-light l" title="Add to wishlist" ><i class="fa fa-heart"></i></button>
+                      <button class="btn btn-5" ng-click="vm.amCart.addItem(product.ID, product.title, product.src[0], product.price, 1)" title="Add to Cart"  href="#"><i class="fa fa-shopping-cart"></i>  Add to cart</button>
+                      <button class="btn btn-light r" title="Add to compear"><i class="fa fa-exchange"></i></button>
+
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </article>
+          </div>
+            <!-- priduct section End  -->
+            <div class="clearfix am-pagination">
+              <nav>
+                <ul class="pagination pull-right">
+                  <li ng-class="{'disabled': vm.currentPage==1 }">
+                    <a ng-click="vm.pageChange(1)" aria-label="Previous" >
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li ng-repeat="page in vm.totalPage" ng-class="{'active': vm.currentPage==page }"><a ng-class="" ng-click="vm.pageChange(page)">{{page}}</a></li>
+                  <li ng-class="{'disabled': vm.currentPage==vm.totalPage.length}">
+                    <a ng-click="vm.pageChange(vm.totalPage.length)" aria-label="Next" >
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+      </div>
+      <!-- product container End -->
+    </div>
+  </div>
+</section>
+<!-- shop page section End -->

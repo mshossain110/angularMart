@@ -1,0 +1,52 @@
+/**********cart page**********/
+
+.cart-logo {
+  float: left;
+  width: 300px;
+}
+.cart-d {
+    float: right;
+}
+.cart-d pre {
+    border: medium none;
+    font-family: lato;
+    font-weight: 300;
+    text-align: right;
+}
+
+.cart{
+  table {
+      border: 1px solid #ddd;
+      margin-bottom: 0px;
+  }
+
+  td.r i {
+      color: #9c2f2f;
+      display: block;
+      line-height: 63px;
+      text-align: center !important;
+      vertical-align: middle;
+      cursor: pointer;
+  }
+
+
+  td.i img{
+    width: 50px;
+  }
+  td.q button, td.q input{
+    display: inline;
+  }
+    td.q input {
+    border: 1px solid $baseColor;
+    border-radius: 0;
+    height: 32px;
+    margin: 0 -3px;
+    padding: 0 15px;
+    width: 50px;
+  }
+
+  .cart-cpn {
+    padding: 15px 30px;
+  }
+
+}

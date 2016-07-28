@@ -1,0 +1,255 @@
+<am-page-title displayname-property="data.title"></am-page-title>
+<section class="container-fluid paddingHorizontal payment-page">
+    <div class="container clearfix">
+        <div class="row">
+            <div class="col-sm-12 payment-h">
+                <div class="cart-logo">
+                    <img src="images/logo.png" alt="" />
+                </div>
+                <div class="cart-d">
+                    <pre>
+                example@example.com
+                000-000-0000
+                www.example.com
+                23-04-2016
+            </pre>
+                </div>
+            </div>
+            <div class="col-sm-8 col-xs-12 payment">
+                <div class="tabs-container justified" ng-init="payment=1">
+                    <!-- Nav tabs -->
+                    <div class="tabs-title">
+                        <span class="ambtn btn-3" ng-click="payment=1"  ng-class="{active: payment=='1'}">Billing Address</span>
+                        <span class="ambtn btn-3"  ng-click="payment=2"  ng-class="{active: payment=='2'}">Shipping Address</span>
+                        <span class="ambtn btn-3"  ng-click="payment=3"  ng-class="{active: payment=='3'}">Payment Complete</span>
+                    </div>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div  class="tab-pane " ng-show="payment=='1'" ng-class="{active: payment=='1'}" >
+                            <h3>Billing Address</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, vel odio non dicta provident sint ex autem mollitia dolorem illum repellat ipsum aliquid illo similique sapiente fugiat minus ratione.</p>
+                            <form class="clearfix ">
+                              <div class="col-md-6 ">
+                                <div class="form-group input-icon am-forms  ">
+                                    <input type="text" placeholder="Enter your text" id="" class="form-control">
+                                    <label for="">First Name</label>
+                                    <i class="fa fa-user"></i>
+
+                                </div>
+                              </div>
+
+
+                              <div class="form-group input-icon am-forms col-md-6">
+                                  <input type="text" placeholder="Enter your text" id="" class="form-control">
+                                  <label for="">Last Name</label>
+                                  <i class="fa fa-user"></i>
+                              </div>
+
+                              <div class="form-group input-icon am-forms col-md-6">
+                                  <input type="text" placeholder="Enter your text" id="" class="form-control">
+                                  <label for="">Email</label>
+                                  <i class="fa fa-envelope"></i>
+                              </div>
+
+                              <div class="form-group input-icon am-forms">
+                                  <input type="text" placeholder="Enter your text" id="" class="form-control">
+                                  <label for="">Phone</label>
+                                  <i class="fa fa-envelope"></i>
+                              </div>
+
+
+
+                            </form>
+                        </div>
+                        <div  class="tab-pane" ng-show="payment=='2'" ng-class="{active: payment=='2'}">
+                            <h3>Shipping Address</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, vel odio non dicta provident sint ex autem mollitia dolorem illum repellat ipsum aliquid illo similique sapiente fugiat minus ratione.</p>
+
+
+
+                            <form class="form-horizontal" action=" " method="post"  id="contact_form">
+                                <fieldset>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">First Name</label>
+                                        <div class="col-md-4 inputGroupContainer">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                                <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" >Last Name</label>
+                                        <div class="col-md-4 inputGroupContainer">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                                <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">E-Mail</label>
+                                        <div class="col-md-4 inputGroupContainer">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                                <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Phone #</label>
+                                        <div class="col-md-4 inputGroupContainer">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-earphone"></i></span>
+                                                <input name="phone" placeholder="(845)555-1212" class="form-control" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Address</label>
+                                        <div class="col-md-4 inputGroupContainer">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-home"></i></span>
+                                                <input name="address" placeholder="Address" class="form-control" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">City</label>
+                                        <div class="col-md-4 inputGroupContainer">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-home"></i></span>
+                                                <input name="city" placeholder="city" class="form-control"  type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Select Basic -->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">State</label>
+                                        <div class="col-md-4 selectContainer">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-list"></i></span>
+                                                <select name="state" class="form-control selectpicker" >
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Zip Code</label>
+                                        <div class="col-md-4 inputGroupContainer">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-home"></i></span>
+                                                <input name="zip" placeholder="Zip Code" class="form-control"  type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Website or domain name</label>
+                                        <div class="col-md-4 inputGroupContainer">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-globe"></i></span>
+                                                <input name="website" placeholder="Website or domain name" class="form-control" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Button -->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label"></label>
+                                        <div class="col-md-4">
+                                            <button type="submit" class="btn btn-lg btn-5" >Send <span class="fa fa-send"></span></button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div  class="tab-pane" ng-show="payment=='3'" ng-class="{active: payment=='3'}">
+                            <h3>Touch Friendly</h3>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-12 cart" ng-controller="cartCtrl">
+                <table class="table table-responsive table-hover table-condensed">
+                    <thead>
+                        <td class="i">
+                        </td>
+                        <td class="n">
+                            Title
+                        </td>
+                        <td class="p">
+                            Price
+                        </td>
+                        <td class="q">
+                            Quantity
+                        </td>
+                        <td class="t">
+                            Total
+                        </td>
+                    </thead>
+                    <tr ng-repeat="item in amCart.getAllItems()">
+                        <td class="i">
+                            <img src="{{item.image}}" alt="" />
+                        </td>
+                        <td class="n">
+                            <h5 ng-bind="item.name"></h5>
+                        </td>
+                        <td class="p">
+                            {{item.price | currency}}
+                        </td>
+                        <td class="q">
+                            {{item.quantity}}
+                        </td>
+                        <td class="t">
+                            {{item.total|currency}}
+                        </td>
+                    </tr>
+                </table>
+                <table class="table">
+                    <tr>
+                        <th>
+                            Cart Subtotal
+                        </th>
+                        <td>
+                            {{amCart.getSubTotal()| currency}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Discount
+                        </th>
+                        <td>
+                            0%
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Shipping
+                        </th>
+                        <td>
+                            {{amCart.getShipping()| currency}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Total
+                        </th>
+                        <td>
+                            {{amCart.getTotal()| currency}}
+                        </td>
+                    </tr>
+                </table>
+                <div class="payment-m">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
